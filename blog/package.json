@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "mongoose-slug-generator": "^1.0.4",
     "webpack": "^5.75.0"
   },
   "name": "blog",
@@ -27,10 +29,10 @@
     "url": "https://github.com/Hanh28111995/nodejs_blog/issues"
   },
   "homepage": "https://github.com/Hanh28111995/nodejs_blog#readme",
-  "lint-staged":{
+  "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --write"
   },
-  "husky":{
+  "husky": {
     "hook": {
       "pre-commit": "lint-staged"
     }
