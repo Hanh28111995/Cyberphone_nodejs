@@ -47,6 +47,7 @@
     "morgan": "^1.10.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "webpack-cli": "^5.0.1"
   }
 }
