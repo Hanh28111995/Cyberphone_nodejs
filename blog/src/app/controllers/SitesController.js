@@ -23,5 +23,17 @@ class SitesController {
   search(req, res) {
     res.render('search')
   }
+
+  // check API /api/v1/
+  checkAPI(req, res, next) {
+    Course.find({})
+      .then((courses) => {
+        res.status(200).json({
+          message: 'ok',
+          courses: MultiResponseToObject(courses),
+        })
+      })
+      .catch(next)
+  }
 }
 module.exports = new SitesController()

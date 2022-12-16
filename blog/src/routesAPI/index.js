@@ -1,18 +1,18 @@
-const newsRouter = require('./news');
+// const newsRouter = require('./news');
 const sitesRouter = require('./site');
-const coursesRouter = require('./courses');
-const myprofileRouter = require('./myProfile');
+// const coursesRouter = require('./courses');
+// const myprofileRouter = require('./myProfile');
 
 
-function route(app) {
+function APIroute(app) {
   // app.get('/', (req, res) => {
   //     return res.render('home');
   // });
 
-  app.use('/news', newsRouter);
-  app.use('/courses', coursesRouter);
-  app.use('/', sitesRouter);
-  app.use('/my-profile',myprofileRouter)
+  // app.use('/news', newsRouter);
+  // app.use('/courses', coursesRouter);
+  app.use('/api/v1/', sitesRouter);
+  // app.use('/my-profile',myprofileRouter)
 
   // app.get('/search', (req, res) => {
   //     return res.render('search');
@@ -24,4 +24,4 @@ function route(app) {
   //     return res.send('');
   // });
 }
-module.exports = route;
+module.exports = APIroute;
