@@ -1,6 +1,6 @@
 /.vscode
-src/public/css/
-node_modules/
-.vercel
-vercel.json
-build
+/src/public/css/
+/node_modules/
+/.vercel
+/vercel
+/build
