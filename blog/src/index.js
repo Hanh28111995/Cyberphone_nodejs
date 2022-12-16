@@ -3,7 +3,7 @@ const express = require('express')
 var methodOverride = require('method-override')
 const hbs = require('express-handlebars')
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3002
 const morgan = require('morgan')
 // const { Console } = require('console')
 
