@@ -1,6 +1,6 @@
 {
     "version":2,
-    "name":"blog",
+    "name":"nodejs_blog",
     "builds": [
         {
             "src": "./index.js",
