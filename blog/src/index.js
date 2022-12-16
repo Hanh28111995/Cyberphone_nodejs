@@ -48,7 +48,7 @@ app.set('views', path.join(__dirname, 'resources', 'views'))
 
 //connect route
 route(app)
-APIroute(app)
+// APIroute(app)
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
