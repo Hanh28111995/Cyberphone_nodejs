@@ -47,7 +47,7 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources', 'views'))
 
 //connect route
-// route(app)
+route(app)
 APIroute(app)
 
 app.listen(port, () => {
