@@ -3,7 +3,7 @@ const express = require('express')
 var methodOverride = require('method-override')
 const hbs = require('express-handlebars')
 const app = express()
-const port = 5000
+const port =  5000
 const morgan = require('morgan')
 // const { Console } = require('console')
 
@@ -48,7 +48,7 @@ app.set('views', path.join(__dirname, 'resources', 'views'))
 
 //connect route
 route(app)
-// APIroute(app)
+APIroute(app)
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
