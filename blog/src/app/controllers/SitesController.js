@@ -26,17 +26,14 @@ class SitesController {
 
   // check API /api/v1/
   checkAPI(req, res, next) {
-    res.status(200).json({
-      message: 'ok',
-    })
-    // Course.find({})
-    //   .then((courses) => {
-    //     res.status(200).json({
-    //       message: 'ok',
-    //       courses: MultiResponseToObject(courses),
-    //     })
-    //   })
-    //   .catch(next)
+    Course.find({})
+      .then((courses) => {
+        res.status(200).json({
+          message: 'ok',
+          courses: MultiResponseToObject(courses),
+        })
+      })
+      .catch(next)
   }
 }
 module.exports = new SitesController()

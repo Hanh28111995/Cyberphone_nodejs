@@ -3,7 +3,7 @@ const express = require('express')
 var methodOverride = require('method-override')
 const hbs = require('express-handlebars')
 const app = express()
-const port = process.env.port || 3002
+const port = 5000
 const morgan = require('morgan')
 // const { Console } = require('console')
 
@@ -47,7 +47,7 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources', 'views'))
 
 //connect route
-// route(app)
+route(app)
 APIroute(app)
 
 app.listen(port, () => {
