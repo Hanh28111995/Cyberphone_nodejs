@@ -12,7 +12,7 @@ const APIroute = require('./routesAPI')
 // call action for API
 const db = require('./config/db')
 //connect to DB
-db.connect()
+// db.connect()
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(
   express.urlencoded({
