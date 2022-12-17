@@ -3,18 +3,18 @@ const express = require('express')
 var methodOverride = require('method-override')
 const hbs = require('express-handlebars')
 const app = express()
-const port = process.env.PORT||3001
+const port = process.env.PORT || 3001
 const morgan = require('morgan')
 // const { Console } = require('console')
 
-const route = require('./routes') 
+const route = require('./routes')
 // call action for View local
 
 const APIroute = require('./routesAPI')
 // call action for API
 
-
 const db = require('./config/db')
+app.use(express.static(path.join(__dirname, 'public')))
 
 //connect to DB
 db.connect()
@@ -22,8 +22,6 @@ db.connect()
 //connect route
 route(app)
 APIroute(app)
-
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(
   express.urlencoded({
@@ -52,6 +50,6 @@ app.set('views', path.join(__dirname, 'resources', 'views'))
 
 app.disable('etag');
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`App listening at http://localhost:${port}`)
 })
