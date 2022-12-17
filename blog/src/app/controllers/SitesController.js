@@ -3,7 +3,7 @@
 
 class SitesController {
   //[GET] /
-  index(req, res, next) {
+  // index(req, res, next) {
     // Course.find({}, function (err, courses) {
     //   if (!err) {
     //     res.json(courses)
