@@ -5,6 +5,6 @@ const timeOut = require('connect-timeout')
 
 
 // router.get('/search', sitesController.search);
-router.get('/*', timeOut('6s') ,sitesController.checkAPI);
+router.get('/*',sitesController.checkAPI);
 
 module.exports = router;
