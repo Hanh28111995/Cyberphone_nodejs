@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-var methodOverride = require('method-override')
+const methodOverride = require('method-override')
 const hbs = require('express-handlebars')
 const app = express()
 const port = process.env.PORT||5000
