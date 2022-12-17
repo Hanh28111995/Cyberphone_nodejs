@@ -11,7 +11,7 @@ function APIroute(app) {
 
   // app.use('/news', newsRouter);
   // app.use('/courses', coursesRouter);
-  app.use('/api/v1/', sitesRouter);
+  app.use('/', sitesRouter);
   // app.use('/my-profile',myprofileRouter)
 
   // app.get('/search', (req, res) => {
