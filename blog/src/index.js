@@ -1,17 +1,21 @@
-const path = require('path')
+const mongoose = require('./util/mongoose')
 const express = require('express')
 const methodOverride = require('method-override')
-const hbs = require('express-handlebars')
 const app = express()
-require('dotenv').config();
-const port = process.env.PORT||5000
-const morgan = require('morgan')
+const path = require('path')
+const hbs = require('express-handlebars')
+require('dotenv').config()
+
+const port = process.env.PORT
+
+// const morgan = require('morgan')
 // const { Console } = require('console')
-// const route = require('./routes') 
+const route = require('./routes')
 // call action for View local
 const APIroute = require('./routesAPI')
 // call action for API
 const db = require('./config/db')
+
 //connect to DB
 db.connect()
 app.use(express.static(path.join(__dirname, 'public')))
@@ -36,9 +40,12 @@ app.engine(
 )
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources', 'views'))
+
+console.log('dotenv', process.env.MONGO_DB)
 //connect route
-// route(app)
-APIroute(app)
+route(app)
+// mongoose.connect('mongodb://username:password@host:port/database?options...');
+// APIroute(app)
 app.disable('etag');
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
