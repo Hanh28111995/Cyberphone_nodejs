@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const hbs = require('express-handlebars')
 const app = express()
+require('dotenv').config();
 const port = process.env.PORT||5000
 const morgan = require('morgan')
 // const { Console } = require('console')
@@ -12,7 +13,7 @@ const APIroute = require('./routesAPI')
 // call action for API
 const db = require('./config/db')
 //connect to DB
-// db.connect()
+db.connect()
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(
   express.urlencoded({
@@ -38,7 +39,7 @@ app.set('views', path.join(__dirname, 'resources', 'views'))
 //connect route
 // route(app)
 APIroute(app)
-// app.disable('etag');
+app.disable('etag');
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })

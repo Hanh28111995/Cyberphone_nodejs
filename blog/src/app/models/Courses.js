@@ -18,7 +18,7 @@ const Course = new Schema(
   },
 )
 
-//add plugins
+// //add plugins
 mongoose.plugin(slug)
 Course.plugin(mongooseDelete, {
   deletedAt: null,
