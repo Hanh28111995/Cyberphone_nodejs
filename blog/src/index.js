@@ -46,7 +46,7 @@ console.log('dotenv', process.env.MONGO_DB)
 route(app)
 // mongoose.connect('mongodb://username:password@host:port/database?options...');
 // APIroute(app)
-app.disable('etag');
+// app.disable('etag');
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
