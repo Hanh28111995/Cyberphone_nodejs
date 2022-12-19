@@ -17,7 +17,9 @@ class SitesController {
           courses: MultiResponseToObject(courses),
         })
       })
-      .catch(next)
+      .catch((next)=>{
+        console.log('not request')
+      })
   }
   //[GET] /search
   search(req, res) {
