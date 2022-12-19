@@ -16,7 +16,7 @@ class SitesController {
         // res.render('home', {
         //   courses: MultiResponseToObject(courses),
         // })
-        res.status(504).json({
+        res.status(200).json({
           message: 'ok',
           // courses: MultiResponseToObject(courses),
         })
