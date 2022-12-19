@@ -13,17 +13,11 @@ class SitesController {
     // })
     Course.find({})
       .then((courses) => {
-        // res.render('home', {
-        //   courses: MultiResponseToObject(courses),
-        // })
-        res.status(200).json({
-          message: 'ok',
+        res.render('home', {
           courses: MultiResponseToObject(courses),
         })
       })
-      .catch((next)=>{
-        console.log('not request')
-      })
+      .catch(next)
   }
   //[GET] /search
   search(req, res) {
