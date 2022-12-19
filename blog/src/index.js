@@ -14,8 +14,7 @@ const route = require('./routes')
 const APIroute = require('./routesAPI')
 // call action for API
 const db = require('./config/db')
-app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(express.static(path.join(__dirname, '/public')))
 //connect to DB
 db.connect()
 app.use(
@@ -35,11 +34,12 @@ app.engine(
     extname: '.hbs',
     helpers: {
       sum: (a, b) => a + b,
+      va: process.env.PORT,
     },
   }),
 )
 app.set('view engine', 'hbs')
-app.set('views', path.join(__dirname, 'resources', 'views'))
+app.set('views', path.join(__dirname, '/resources', 'views'))
 
 console.log('dotenv', process.env.MONGO_DB)
 //connect route
