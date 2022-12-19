@@ -13,7 +13,11 @@ class SitesController {
     // })
     Course.find({})
       .then((courses) => {
-        res.render('home', {
+        // res.render('home', {
+        //   courses: MultiResponseToObject(courses),
+        // })
+        res.status(200).json({
+          message: 'ok',
           courses: MultiResponseToObject(courses),
         })
       })
