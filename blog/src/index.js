@@ -15,10 +15,10 @@ const route = require('./routes')
 const APIroute = require('./routesAPI')
 // call action for API
 const db = require('./config/db')
+app.use(express.static(path.join(__dirname, 'public')))
 
 //connect to DB
 db.connect()
-app.use(express.static(path.join(__dirname, 'public')))
 app.use(
   express.urlencoded({
     extended: true,
@@ -28,6 +28,7 @@ app.use(express.json()) //xu li request value từ js (xmlHttprequest, fetch, a
 app.use(methodOverride('_method'))
 //http logger
 // app.use(morgan('combined'))
+
 //Template engine
 app.engine(
   'hbs',
