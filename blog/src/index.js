@@ -1,4 +1,3 @@
-const mongoose = require('./util/mongoose')
 const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
