@@ -14,7 +14,7 @@ const route = require('./routes')
 const APIroute = require('./routesAPI')
 // call action for API
 const db = require('./config/db')
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '/public')))
 
 //connect to DB
 db.connect()
