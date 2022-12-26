@@ -1,7 +1,7 @@
 class NewsController {
   //[GET] /News
   index(req, res) {
-    res.render('news');
+    res.render('phoneList');
   }
   //[GET] /news/:slug
   show(req, res) {

@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-5">
                 <img class="img-fluid" src="./image/product-header2.png" alt="">
             </div>
         </div>
@@ -39,12 +39,12 @@
                 <div class="card cardPhone">
                     <img src="{{this.img}}" alt="...">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between" style="flex-direction: column;">
                             <div>
                                 <h3 class="cardPhone__title">{{this.name}}</h3>
                             </div>
                             <div>
-                                <h3 class="cardPhone__title">${{this.price}}</h3>
+                                <h3 class="cardPhone__title">{{this.price}}</h3>
                             </div>
                         </div>
                         <p class="cardPhone__text">{{this.desc}}</p>

@@ -29,3 +29,10 @@ Product.plugin(mongooseDelete, {
 })
 
 module.exports = mongoose.model('Product', Product)
+
+
+
+
+  
+
+  

@@ -9,9 +9,10 @@ function route(app) {
   //     return res.render('home');
   // });
 
-  app.use('/news', newsRouter);
+  
   app.use('/courses', coursesRouter);
   app.use('/', sitesRouter);
+  app.use('/phone-list', newsRouter);
   app.use('/my-profile',myprofileRouter)
 
   // app.get('/search', (req, res) => {

@@ -18,4 +18,9 @@
         letter-spacing: $ls-1;
         margin-bottom: $mg-2;
     }
+    @media screen and (max-width: 576px) {
+        h1{
+            font-size: 50px;
+        }
+    }
 }

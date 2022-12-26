@@ -1,16 +1,28 @@
-*
-{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     min-width: 695px;
     width: 100%;
 }
+    @media screen and (max-width: 414px) {
+        .wrapper {
+            min-width: 412px;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .wrapper {
+            min-width: 375px;
+        }
+    }
+
+
 @import "./base/reset";
 @import "./helper/mixin";
 @import "./helper/variable";
@@ -20,4 +32,3 @@
 @import "./components/button";
 @import "./layout/item";
 @import "./layout/modal";
-
