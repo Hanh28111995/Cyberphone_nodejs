@@ -8,6 +8,7 @@
     "mongoose": "^6.8.0",
     "mongoose-delete": "^0.5.4",
     "mongoose-slug-generator": "^1.0.4",
+    "slick-carousel": "^1.8.1",
     "webpack": "^5.75.0"
   },
   "name": "blog",

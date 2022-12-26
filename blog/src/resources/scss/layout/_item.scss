@@ -1,0 +1,56 @@
+.section {
+    padding: 100px 5%;
+
+    .section-title {
+        margin-bottom: 70px;
+        text-align: center;
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: #1d365e;
+        letter-spacing: 0.015rem;
+
+    }
+}
+
+.item-product {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: auto;
+    .cardPhone {
+        box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+        background-color: #f5f9fe;
+        border: none;
+        margin-bottom: 30px;
+        padding: 30px;
+
+        img {
+            box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+            border-radius: 8px;
+        }
+
+        .cardPhone__title {
+            font-size: $fs-2;
+        }
+
+        .cardPhone__text {
+            font-size: $fs-1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: pre;
+        }
+    }
+}
+
+.inner_detail {
+    background-color: $color-white-3;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    display: none;
+
+    table td {
+        padding-right: 20px;
+    }
+}

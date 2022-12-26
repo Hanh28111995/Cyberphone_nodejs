@@ -1,31 +1,40 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="/" id="pic">
-      <img src="/img/i.jpg"  alt="logo" style="width:40px;">
-      F8 Education
-    </a>
+<header>
+    <nav class="navbar container navbar-expand-md navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand " href="#">CyberPhone</a>
 
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto">
-      {{!-- <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-      </li> --}}
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <img
-            src="https://yt3.ggpht.com/wgneNTiW753q5G6XMnjyNLAzReR4TVFJryTKTpIqJefrKMyhABPwfnyNWIoT5NNGstFlva1tgw=s48-c-k-c0x00ffffff-no-rj"
-            alt="avatar" class="user-avatar">
-          Sơn Đặng
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/courses/create">Đăng khóa học</a>
-          <a class="dropdown-item" href="/my-profile/my-courses">Khóa học của tôi</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Đăng xuất</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Phone</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Accessory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+    </nav>
+</header>

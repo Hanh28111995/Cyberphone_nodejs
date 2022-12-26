@@ -1,21 +1,87 @@
-<div class="mt-4">
-    <div class="row">
-        {{#each courses}}
-        <div class="col-sm-6 col-lg-4">
-            <div class="card my-3">
-                <a href="/courses/{{this.slug}}">
-                    <img src="{{this.thumnail}}" alt="Card image" class="card-img-top">
-                </a>
-                <div class="card-body">
-                    <a href="/courses/{{this.slug}}">
-                        <h5 class="card-title">{{this.name}}</h5>
-                    </a>
-                    <p class="card-text"></p>
-                    <a href="" class="btn btn-primary">Mua khóa học</a>
+<section id="carousel">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h1>CyberPhone</h1>
+                    <h3>Best Smartphone of 2021!</h3>
+                    <p>Cras tortor mi, lobortis quis ornare in, varius scelerisque urna. Vivamus imperdiet dolor nec
+                        odio convallis consequat.</p>
+                    <div>
+                        <button class="btn btn-white mr-2">More Info</button>
+                        <button class="btn btn-blue" id="showCartBtn" data-toggle="modal" data-target="#myModal">
+                            <i class="fa fa-shopping-cart"></i>
+                            <p id="numCartItem"></p>
+                        </button>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="./image/product-header2.png" alt="">
+            </div>
         </div>
-        {{/each}}
     </div>
-</div>
-{{!-- <h1>{{courses}}</h1> --}}
+</section>
+
+<section class="products section ">
+    <h2 class="section-title">-New Products-</h2>
+    <div id="filter" class="customed-select mb-5">
+        <select id="myOptions" onchange="getListPhones()">
+            <option value="none" selected>Select car:</option>
+            <option value="iphone">iPhone</option>
+            <option value="samsung">Samsung</option>
+        </select>
+    </div>
+    <div class="products__content  container-fluid">
+        <div class="your-class" id="phoneList">
+            {{#each products}}
+            <div class="item-product col">
+                <div class="card cardPhone">
+                    <img src="{{this.img}}" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h3 class="cardPhone__title">{{this.name}}</h3>
+                            </div>
+                            <div>
+                                <h3 class="cardPhone__title">${{this.price}}</h3>
+                            </div>
+                        </div>
+                        <p class="cardPhone__text">{{this.desc}}</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="cardPhone__detail">
+                                <button class="open-detail" onclick="open_d({{this.slug}})"><i>Show detail
+                                        >></i></button>
+                                <button class="close-detail" onclick="close_d({{this.slug}})"><i></i>Hide detail
+                                    >></i></button>
+                                <div id="inner_detail" class="inner_detail">
+                                    <table>
+                                        <tr>
+                                            <td>Screen</td>
+                                            <td>{{this.screen}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BackCamera</td>
+                                            <td>{{this.backCamera}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FrontCamera</td>
+                                            <td>{{this.frontCamera}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btnPhone-shadow" id="addToCartBtn_{{this.slug}}"
+                                    onclick="addAction({{this.slug}})"><i class="fa fa-shopping-cart"></i> Buy
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+

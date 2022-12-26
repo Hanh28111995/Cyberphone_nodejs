@@ -1,15 +1,23 @@
-@import 'variable';
-h1 {
-  color: $red-color;
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-h2 {
-  color: green;
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 695px;
+    width: 100%;
 }
-
-.user-avatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50% !important;
-  margin-right: 4px;
-}
+@import "./base/reset";
+@import "./helper/mixin";
+@import "./helper/variable";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/carousel";
+@import "./components/button";
+@import "./layout/item";
+@import "./layout/modal";
 

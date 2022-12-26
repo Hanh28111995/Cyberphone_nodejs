@@ -1,0 +1,53 @@
+header {
+    background-color: #f5f9fe;
+    box-shadow: 0 2px 4px #e2ebfc;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    .navbar-brand {
+        @include styleTest($fs-3, $color-blue-2, $fw-3);
+    }
+    .navbar-toggler{
+        background-color: $color-blue-2;
+    }
+    .navbar-nav {
+        .nav-item {
+            margin: $fs-1;
+
+            .nav-link {
+                @include styleTest($fs-1, $color-blue-1, $fw-2);
+                transition: all 0.2s;
+            }
+
+            &:hover {
+                .nav-link {
+                    @include styleTest($fs-1, $color-blue-2, $fw-2);
+                }
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 3px;
+                background-color: $color-blue-2;
+                transform: scaleX(0);
+                display: block;
+                transition: all 0.2s;
+            }
+        }
+
+        .active {
+            .nav-link {
+                @include styleTest($fs-1, $color-blue-2, $fw-2);
+            }
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+}

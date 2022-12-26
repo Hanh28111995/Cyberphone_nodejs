@@ -1,0 +1,121 @@
+.btn-white {
+    cursor: pointer;
+    background: transparent;
+    padding: $pd-3 30px;
+    border: 2px solid $color-blue-2;
+    border-radius: $bd-2;
+    letter-spacing: $ls-2;
+    font-size: $fs-1;
+    font-weight: $fw-2;
+    color: $color-blue-2;
+    box-shadow: 0 3px 6px $color-blue-3;
+    transition: .5s;
+
+    &:hover {
+        color: $color-white-1;
+        background: $color-blue-2;
+    }
+}
+
+.btn-blue {
+    cursor: pointer;
+    background: linear-gradient(120deg, $color-blue-4, $color-blue-2);
+    // padding: $pd-3 $pd-4;
+    padding: 15.5px 55px;
+    border: none;
+    border-radius: $bd-2;
+    letter-spacing: $ls-2;
+    font-size: $fs-1;
+    font-weight: $fw-2;
+    color: $color-white-3;
+    transition: .5s;
+    position: relative;
+
+    &:hover {
+        color: $color-white-1;
+        opacity: 0.5;
+    }
+}
+
+.btnPhone-shadow {
+    background: #f5f9fe;
+    padding: 8px 20px;
+    border-radius: 4px;
+    letter-spacing: 0.03rem;
+    font-size: 10px;
+    font-weight: 600;
+    color: $color-blue-2;
+    box-shadow: 2px 2px 4px #e2ebfc, -2px -2px 4px $color-white-3;
+    transition: .5s;
+    border: none;
+    .num_item {
+        color: $color-white-3;
+        background-color: $color-blue-2;
+        border-radius: 50%;
+        padding: 3px 6px;
+        transition: .5s;
+    }
+    &:hover {
+        box-shadow: 2px 2px 4px $color-white-3, -2px -2px 4px #e2ebfc;
+        color: $color-white-1;
+        background: $color-blue-2;
+        .num_item 
+        {
+            color: $color-blue-2;
+            background-color: $color-white-3;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.open-detail,
+.close-detail {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    color: $color-blue-2;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.open-detail {
+    display: block;
+}
+
+.close-detail {
+    display: none;
+}
+
+#filter select {
+    width: 200px;
+    font-weight: 600;
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+    color: #1d365e;
+}
+
+#numCartItem {
+    display: none;
+    text-align: center;
+    padding-top: 1px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(235, 0, 40);
+    position: absolute;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 15px;
+    top: 10px;
+    right: 20px;
+    color: white !important;
+    border-radius: 15px;
+}

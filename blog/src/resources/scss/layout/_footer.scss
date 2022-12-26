@@ -1,0 +1,41 @@
+#footer {
+    height: 240px;
+    width: 100%;
+    display: inline-block;
+    background-color: $color-blue-2;
+    color: antiquewhite;
+
+    .footer-main {
+        height: 240px;
+        display: inline-block;
+        a{
+            color: antiquewhite;
+            text-decoration: none;
+            &:hover{
+                color: wheat;
+            }
+        }
+
+        .footer-main-1 {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 390px;
+            height: 240px;
+            border: 1px solid transparent;
+            font-size: 14px;
+            ul li {
+                list-style-type: none;
+                margin-top: 5px;
+            }
+        }
+        .footer-main-2 {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+        }
+
+    }
+}

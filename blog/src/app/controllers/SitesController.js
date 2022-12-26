@@ -1,4 +1,5 @@
 const Course = require('../models/Courses')
+const Product = require('../models/Products')
 const { MultiResponseToObject } = require('../../util/mongoose')
 
 class SitesController {
@@ -11,10 +12,10 @@ class SitesController {
     //     res.status(400).json({ error: 'ERROR !' })
     //   }
     // })
-    Course.find({})
-      .then((courses) => {
+    Product.find({})
+      .then((products) => {
         res.render('home', {
-          courses: MultiResponseToObject(courses),
+          products: MultiResponseToObject(products),
         })
       })
       .catch(next)
