@@ -1,0 +1,40 @@
+.Ads-banner {
+    width: 100%;
+    padding-top: 150px;
+
+    .banner-left {
+        padding-right: 0;
+    }
+
+    .banner-right {
+        padding-left: 0
+    }
+}
+
+.PList {
+    width: 100%;
+
+    .box-common__main {
+        .listproduct {
+            margin-left: calc(10%/6);
+            margin-right: calc(10%/6);
+        }
+    }
+}
+
+.col-xs-4 {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+.btn-phanloai {
+width: 25%;
+.btn-phanloai-child {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,.125);}
+    &:hover{
+        border: 1px solid  #2a73dd;
+    }
+}

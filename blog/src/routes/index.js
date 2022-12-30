@@ -1,4 +1,4 @@
-const newsRouter = require('./news');
+const newsRouter = require('./phoneList');
 const sitesRouter = require('./site');
 const coursesRouter = require('./courses');
 const myprofileRouter = require('./myProfile');

@@ -1,6 +1,7 @@
 const Course = require('../models/Courses')
 const Product = require('../models/Products')
 const { MultiResponseToObject } = require('../../util/mongoose')
+var url = require('url')
 
 class SitesController {
   // [GET] /
@@ -16,6 +17,7 @@ class SitesController {
       .then((products) => {
         res.render('home', {
           products: MultiResponseToObject(products),
+          pathname: url.parse(req.originalUrl).pathname,
         })
       })
       .catch(next)

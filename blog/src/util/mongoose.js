@@ -5,5 +5,4 @@ module.exports = {
     SingleResponseToObject: function (mg) {
         return mg ? mg.toObject() : mg ;
     },
-
 }

@@ -1,1 +1,120 @@
-<h1>News</h1>
+<div class="Ads-banner container px-0">
+    <div class="row mb-5">
+        <div class="banner-left col-8">
+            <img id="img" class="img-fluid" onclick="changeImage()" src="./img/phone/banner/banner-left/3.png" alt="">
+            <script>
+                var index = 1;
+                changeImage = function () {
+                    var imgs = ["./img/phone/banner/banner-left/1.png", "./img/phone/banner/banner-left/2.png",
+                        "./img/phone/banner/banner-left/3.png", "./img/phone/banner/banner-left/4.png"]
+                    document.getElementById('img').src = imgs[index];
+                    index++;
+                    if (index == 4) {
+                        index = 0;
+                    }
+                }
+                setInterval(changeImage, 1500);
+            </script>
+        </div>
+        <div class="banner-right col-4">
+            <div class="banner-right-top">
+                <img class="img-fluid" src="./img/phone/banner/banner-right/euro-m51-390-97-390x97.png" alt="">
+            </div>
+            <div class="banner-right-bottom">
+                <img class="img-fluid" src="./img/phone/banner/banner-right/sticky-A15-15s-390-97-390x97.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="GET" action="" name="phone-filter-form">
+    <div style="display: none;">
+        <div class="form-group">
+            <input type="text" name="type" value="" class="form-control" id="type-phone-input">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+<div id="filter-1" class="container d-flex justify-content-center">
+</div>
+
+<div class="PList container">
+    <div class="box-common__main row ">
+        {{#each products}}
+        <div class="listproduct col-md-4 col-sm-4 col-xs-4 card my-2 py-5 " style="align-items: center">
+            <div class="listproduct1">
+                <img class="img-fluid" src="{{this.img}}" alt="">
+                <h5 href="#">{{this.name}}</a>
+                    <h5 style="margin-top: 6px;">Online giá rẻ</h5>
+                    <strong>{{this.price}}</strong>
+                    <h5 style="font-size: 15px;text-decoration: line-through;">20.990.000₫
+                        <span style="display: inline-block;"> -28%</span>
+                    </h5>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script>
+    if ('{{pathname}}'.indexOf("phone-list") !== -1) {
+        let countnav = document.getElementsByClassName('nav-item');
+        for (let i = 0; i < countnav.length; i++) {
+            countnav[i].classList.remove('active')
+        }
+        document.getElementsByClassName('nav-item')[1].classList.add('active');
+    }
+
+    function renderList(arr) {
+        let content = "";
+        arr.forEach(function (item) {
+            content += `  
+            <a href="" id="${item}BTN" class="btn-phanloai" data-id="${item}">
+               <button class="btn btn-phanloai-child">
+               <img class="img-fluid" src="./img/phone/phanloai/${item}.jpg" alt="">
+               </button>
+            </a>
+                   `
+        })
+        document.getElementById("filter-1").innerHTML = content;
+    }
+
+    let filterArr2 = {{{ json  typeList }}}
+    renderList(filterArr2);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let phoneName_back = ({{{ json response }}}).split(',');
+
+    if (phoneName_back[0] === '') {
+        phoneName_back.splice(0, 1);
+    }
+    for (let i = 0; i < phoneName_back.length; i++) {
+        $("#" + phoneName_back[i] + "BTN .btn-phanloai-child").css("background-color", "whitesmoke")
+    }
+
+    let phoneName = [];
+    var colorCheck = '';
+    var FilterForm = document.forms['phone-filter-form']
+    var FilterButton = document.getElementById('iphone')
+    for (let i = 0; i < filterArr2.length; i++) {
+        $("#" + filterArr2[i] + "BTN").click(function (e) {
+            e.preventDefault()
+            colorCheck = $("#" + filterArr2[i] + "BTN .btn-phanloai-child")
+            if (colorCheck.css("background-color") === "rgba(0, 0, 0, 0)") {
+                colorCheck.css("background-color", "whitesmoke");
+                phoneName_back.push($(this).attr("data-id"));
+                phoneName = phoneName_back.reduce((unique, item) =>
+                    unique.includes(item) ? unique : [...unique, item], []);
+                $("#type-phone-input").val(phoneName.toString());
+            }
+            else {
+                colorCheck.css("background-color", "transparent");
+                phoneName = phoneName_back.filter(item => item !== $(this).attr("data-id"))
+                $("#type-phone-input").val(phoneName.toString());
+            }
+            FilterForm.submit();
+        });
+    }
+    })
+</script>

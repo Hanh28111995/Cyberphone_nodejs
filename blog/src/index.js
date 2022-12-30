@@ -3,12 +3,13 @@ const methodOverride = require('method-override')
 const app = express()
 const path = require('path')
 const hbs = require('express-handlebars')
+
 require('dotenv').config()
 
 const port = process.env.PORT
 
-// const morgan = require('morgan')
-// const { Console } = require('console')
+const morgan = require('morgan')
+const { Console } = require('console')
 const route = require('./routes')
 // call action for View local
 const APIroute = require('./routesAPI')
@@ -35,6 +36,9 @@ app.engine(
     helpers: {
       sum: (a, b) => a + b,
       va: process.env.PORT,
+      json: function(context) {
+        return JSON.stringify(context)
+      },
     },
   }),
 )
@@ -46,8 +50,8 @@ console.log('dotenv', process.env.MONGO_DB)
 route(app)
 // mongoose.connect('mongodb://username:password@host:port/database?options...');
 // APIroute(app)
-app.disable('etag');
+
+app.disable('etag')
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
-
