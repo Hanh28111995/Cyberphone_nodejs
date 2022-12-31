@@ -56,16 +56,10 @@
         {{/each}}
     </div>
 </div>
-
 <script>
-    if ('{{pathname}}'.indexOf("phone-list") !== -1) {
-        let countnav = document.getElementsByClassName('nav-item');
-        for (let i = 0; i < countnav.length; i++) {
-            countnav[i].classList.remove('active')
-        }
-        document.getElementsByClassName('nav-item')[1].classList.add('active');
-    }
+    let filterArr2 = {{{ json  typeList }}}
 
+    renderList(filterArr2);
     function renderList(arr) {
         let content = "";
         arr.forEach(function (item) {
@@ -80,24 +74,22 @@
         document.getElementById("filter-1").innerHTML = content;
     }
 
-    let filterArr2 = {{{ json  typeList }}}
-    renderList(filterArr2);
-
+    checkPathToActive('{{pathname}}');
     document.addEventListener('DOMContentLoaded', function () {
         let phoneName_back = ({{{ json response }}}).split(',');
+        let phoneName = [];
+        let colorCheck = '';
+        let FilterForm = document.forms['phone-filter-form']
+        let FilterButton = document.getElementById('iphone')
 
-    if (phoneName_back[0] === '') {
+        if (phoneName_back[0] === '') {
         phoneName_back.splice(0, 1);
-    }
-    for (let i = 0; i < phoneName_back.length; i++) {
+        }
+        for (let i = 0; i < phoneName_back.length; i++) {
         $("#" + phoneName_back[i] + "BTN .btn-phanloai-child").css("background-color", "whitesmoke")
-    }
+        }
 
-    let phoneName = [];
-    var colorCheck = '';
-    var FilterForm = document.forms['phone-filter-form']
-    var FilterButton = document.getElementById('iphone')
-    for (let i = 0; i < filterArr2.length; i++) {
+        for (let i = 0; i < filterArr2.length; i++) {
         $("#" + filterArr2[i] + "BTN").click(function (e) {
             e.preventDefault()
             colorCheck = $("#" + filterArr2[i] + "BTN .btn-phanloai-child")
