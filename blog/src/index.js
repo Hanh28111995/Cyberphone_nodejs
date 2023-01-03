@@ -3,6 +3,7 @@ const methodOverride = require('method-override')
 const app = express()
 const path = require('path')
 const hbs = require('express-handlebars')
+var paginate = require('handlebars-paginate');
 
 require('dotenv').config()
 
@@ -36,9 +37,10 @@ app.engine(
     helpers: {
       sum: (a, b) => a + b,
       va: process.env.PORT,
-      json: function(context) {
+      json: (context) => {
         return JSON.stringify(context)
       },
+      paginate: paginate
     },
   }),
 )

@@ -56,6 +56,25 @@
         {{/each}}
     </div>
 </div>
+<div class="pagination pagination-centered mx-auto">
+  <ul class="pagination mt-5">
+    {{#paginate pagination type="first"}}
+      <li {{#if disabled}}class="disabled page-item"{{/if}}><a class="page-link" href="?p={{n}}">First</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="previous"}}
+      <li {{#if disabled}}class="disabled page-item"{{/if}}><a class="page-link" href="?p={{n}}">Prev</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="middle" limit="5"}}
+      <li {{#if active}}class="active page-item"{{/if}}><a class="page-link" href="?p={{n}}">{{n}}</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="next"}}
+      <li {{#if disabled}}class="disabled page-item"{{/if}}><a class="page-link" href="?p={{n}}">Next</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="last"}}
+      <li {{#if disabled}}class="disabled page-item"{{/if}}><a class="page-link" href="?p={{n}}">Last</a></li>
+    {{/paginate}}
+  </ul>
+</div>
 
 <script>
     let filterArr2 = {{{ json  typeList }}}
@@ -76,7 +95,7 @@
 
     checkPathToActive('{{pathname}}');
     document.addEventListener('DOMContentLoaded', function () {
-    let phoneName_back = ({{{ json response }}}).split(',');
+        let phoneName_back = ({{{ json response }}}).split(',');
     let phoneName = [];
     let colorCheck = '';
     let FilterForm = document.forms['phone-filter-form']
