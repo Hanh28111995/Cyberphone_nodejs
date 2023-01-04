@@ -110,7 +110,7 @@
 
     for (let i = 0; i < filterArr2.length; i++) {
         $("#" + filterArr2[i] + "BTN").click(function (e) {
-            // e.preventDefault() //
+            e.preventDefault()
             colorCheck = $("#" + filterArr2[i] + "BTN .btn-phanloai-child")
             if (colorCheck.css("background-color") === "rgba(0, 0, 0, 0)") {
                 colorCheck.css("background-color", "whitesmoke");
