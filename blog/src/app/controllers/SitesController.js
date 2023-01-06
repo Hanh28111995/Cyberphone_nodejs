@@ -27,7 +27,7 @@ class SitesController {
     })
   }
 
-  // [POST] /sign up
+  // [POST] /submit form sign up
   submitRegister(req, res, next) {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
@@ -51,7 +51,6 @@ class SitesController {
       password: req.body.password,
     })
       .then((user) => {
-        alert(user)
         res.json(user)
        
       })
