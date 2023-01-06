@@ -1,0 +1,24 @@
+<div class="signupPage">
+        <div class="card">
+            <div class="card-body">
+                <form action="/signup" method="POST">
+                    <h2>Register</h2>
+                    <div class="input-box">
+                        <input name="username" type="text" placeholder= "Username" >
+                        <p style="color: red; font-style:italic">{{errors.error_username}}</p>
+                    </div>
+                    <div class="input-box">
+                        <input name="password" type="password" placeholder= "Password" >
+                        <p style="color: red; font-style:italic">{{errors.error_password}}</p>
+                    </div>
+                    <button type="submit">
+                        <h2>Submit</h2>
+                    </button>
+                    <br>
+                    <a href="/login">
+                        <p>Go to Login</p>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>

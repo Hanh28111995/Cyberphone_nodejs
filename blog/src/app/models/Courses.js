@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const slug = require('mongoose-slug-generator')
-const mongooseDelete = require('mongoose-delete')
+import mongoose from 'mongoose';
+import slug from 'mongoose-slug-generator';
+import mongooseDelete from 'mongoose-delete';
 
 const Schema = mongoose.Schema
 const Course = new Schema(
@@ -23,6 +23,10 @@ mongoose.plugin(slug)
 Course.plugin(mongooseDelete, {
   deletedAt: null,
   overrideMethods: 'all',
+},
+{
+  collection: 'courses'
 })
 
-module.exports = mongoose.model('Course', Course)
+
+export default mongoose.model('Course', Course)

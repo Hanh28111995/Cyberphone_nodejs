@@ -1,24 +1,29 @@
-const express = require('express')
-const methodOverride = require('method-override')
-const app = express()
-const path = require('path')
-const hbs = require('express-handlebars')
-var paginate = require('handlebars-paginate');
+import express from 'express';
+import methodOverride from 'method-override';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import hbs from 'express-handlebars';
+import paginate from 'handlebars-paginate';
+import morgan from 'morgan';
+import { Console } from 'console';
+import route from './routes/index.js';
+import connect from './config/db/index.js';
+import * as dotenv from 'dotenv'
 
-require('dotenv').config()
+const app = express();
+dotenv.config()
 
 const port = process.env.PORT
 
-const morgan = require('morgan')
-const { Console } = require('console')
-const route = require('./routes')
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
 // call action for View local
-const APIroute = require('./routesAPI')
 // call action for API
-const db = require('./config/db')
 app.use(express.static(path.join(__dirname, '/public')))
 //connect to DB
-db.connect()
+connect()
 app.use(
   express.urlencoded({
     extended: true,

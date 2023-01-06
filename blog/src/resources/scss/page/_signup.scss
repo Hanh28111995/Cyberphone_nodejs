@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
+
+.signupPage,
+.loginPage {
+    width: 100%;
+    min-width: 412px;
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+
+    .card {
+        width: 28rem;
+        height: 28rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background: $color-white-1;
+        box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px -1px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(209, 217, 230, 0.9);
+        border-radius: 2rem;
+        border-color: white;
+
+        .card-body {
+            width: 26rem;
+            height: 26rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background: $color-white-1;
+            box-shadow: -5px 5px 10px rgba(209, 217, 230, 0.2), 5px -5px 10px rgba(209, 217, 230, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(209, 217, 230, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(209, 217, 230, 0.5);
+            border-radius: 1rem;
+            flex: none;
+
+            h2 {
+                font-family: kanit;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 27px;
+                /* identical to box height */
+                letter-spacing: 0.1em;
+                color: $color-blue-2;
+                text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9);
+            }
+
+            a {
+                text-align: center;
+            }
+
+            p {
+                font-family: kanit;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                /* identical to box height */
+                letter-spacing: 0.05em;
+                color: #596E95;
+                text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 1px 1px 1px rgba(255, 255, 255, 0.3);
+            }
+
+            button {
+                height: 3.5rem;
+                width: 20rem;
+                background: $color-blue-2;
+                box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(209, 217, 230, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2);
+                border-radius: 1rem;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    color: $color-white-2;
+                }
+
+                &:focus,
+                &:hover {
+                    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2), inset 5px 5px 13px rgba(209, 217, 230, 0.9);
+                }
+            }
+
+            .input-box {
+                width: 20rem;
+                height: 3rem;
+                margin-bottom: 1rem;
+                border-radius: 10px;
+            }
+
+            input {
+                width: 19rem;
+                background: $color-white-2;
+                box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(209, 217, 230, 0.9);
+                border: none;
+                font-family: kanit;
+                font-style: normal;
+                font-weight: 400;
+                font-style: italic;
+                font-size: 20px;
+                /* identical to box height */
+                letter-spacing: 0.05em;
+                color: #596E95;
+                text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 1px 1px 1px rgba(255, 255, 255, 0.3);
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+        }
+
+    }
+
+    @media only screen and (min-width: 300px) and (max-width: 500px) {
+        .card {
+            width: 18rem;
+        }
+    
+        .card-body {
+            width: 15rem;
+        }
+    
+        h2 {
+            font-size: 20px;
+        }
+    
+        p {
+            font-size: 10px;
+        }
+    
+        button {
+            width: 10rem;
+        }
+    
+        .input-box {
+            width: 10rem;
+            height: 2rem;
+        }
+    
+        input {
+            width: 9rem;
+            font-size: 12px;
+        }
+    }}
+

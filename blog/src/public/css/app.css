@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -297,3 +298,120 @@ header {
     border: 1px solid rgba(0, 0, 0, 0.125); }
   .btn-phanloai:hover {
     border: 1px solid  #2a73dd; }
+
+.signupPage,
+.loginPage {
+  width: 100%;
+  min-width: 412px;
+  padding-top: 150px;
+  display: flex;
+  justify-content: center; }
+  .signupPage .card,
+  .loginPage .card {
+    width: 28rem;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px -1px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(209, 217, 230, 0.9);
+    border-radius: 2rem;
+    border-color: white; }
+    .signupPage .card .card-body,
+    .loginPage .card .card-body {
+      width: 26rem;
+      height: 26rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: -5px 5px 10px rgba(209, 217, 230, 0.2), 5px -5px 10px rgba(209, 217, 230, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(209, 217, 230, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(209, 217, 230, 0.5);
+      border-radius: 1rem;
+      flex: none; }
+      .signupPage .card .card-body h2,
+      .loginPage .card .card-body h2 {
+        font-family: kanit;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 27px;
+        /* identical to box height */
+        letter-spacing: 0.1em;
+        color: #2a73dd;
+        text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9); }
+      .signupPage .card .card-body a,
+      .loginPage .card .card-body a {
+        text-align: center; }
+      .signupPage .card .card-body p,
+      .loginPage .card .card-body p {
+        font-family: kanit;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        /* identical to box height */
+        letter-spacing: 0.05em;
+        color: #596E95;
+        text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 1px 1px 1px rgba(255, 255, 255, 0.3); }
+      .signupPage .card .card-body button,
+      .loginPage .card .card-body button {
+        height: 3.5rem;
+        width: 20rem;
+        background: #2a73dd;
+        box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(209, 217, 230, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2);
+        border-radius: 1rem;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .signupPage .card .card-body button h2,
+        .loginPage .card .card-body button h2 {
+          color: #e2ebfc; }
+        .signupPage .card .card-body button:focus, .signupPage .card .card-body button:hover,
+        .loginPage .card .card-body button:focus,
+        .loginPage .card .card-body button:hover {
+          box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2), inset 5px 5px 13px rgba(209, 217, 230, 0.9); }
+      .signupPage .card .card-body .input-box,
+      .loginPage .card .card-body .input-box {
+        width: 20rem;
+        height: 3rem;
+        margin-bottom: 1rem;
+        border-radius: 10px; }
+      .signupPage .card .card-body input,
+      .loginPage .card .card-body input {
+        width: 19rem;
+        background: #e2ebfc;
+        box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(209, 217, 230, 0.5), inset -5px 5px 10px rgba(209, 217, 230, 0.2), inset 5px -5px 10px rgba(209, 217, 230, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(209, 217, 230, 0.9);
+        border: none;
+        font-family: kanit;
+        font-style: normal;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 20px;
+        /* identical to box height */
+        letter-spacing: 0.05em;
+        color: #596E95;
+        text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 1px 1px 1px rgba(255, 255, 255, 0.3); }
+      .signupPage .card .card-body input:focus,
+      .loginPage .card .card-body input:focus {
+        outline: none; }
+  @media only screen and (min-width: 300px) and (max-width: 500px) {
+    .signupPage .card,
+    .loginPage .card {
+      width: 18rem; }
+    .signupPage .card-body,
+    .loginPage .card-body {
+      width: 15rem; }
+    .signupPage h2,
+    .loginPage h2 {
+      font-size: 20px; }
+    .signupPage p,
+    .loginPage p {
+      font-size: 10px; }
+    .signupPage button,
+    .loginPage button {
+      width: 10rem; }
+    .signupPage .input-box,
+    .loginPage .input-box {
+      width: 10rem;
+      height: 2rem; }
+    .signupPage input,
+    .loginPage input {
+      width: 9rem;
+      font-size: 12px; } }

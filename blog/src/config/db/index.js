@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
-async function connect() {
+export default async function connect() {
   try {
     await mongoose.connect(process.env.MONGO_DB, {
       useUnifiedTopology: true, // For Mongoose 5 only. Remove for Mongoose 6+
@@ -12,4 +12,4 @@ async function connect() {
     console.log('connect fail')
   }
 }
-module.exports = { connect }
+

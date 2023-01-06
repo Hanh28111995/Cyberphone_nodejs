@@ -1,6 +1,5 @@
-const Course = require('../models/Courses')
-const { MultiResponseToObject } = require('../../util/mongoose')
-const mongoose = require('../../util/mongoose')
+import Course from '../models/Courses.js';
+import  CopyDB  from '../../util/mongoose.js';
 
 class MyfrofileController {
   //[GET] /myprofile/my-courses
@@ -8,7 +7,7 @@ class MyfrofileController {
     Course.find({ deletedAt: null }) //dk thuoc tinh Deleted trong DB
       .then((courses) =>
         res.render('myprofile/myCourse', {
-          courses: MultiResponseToObject(courses),
+          courses: CopyDB.MultiResponseToObject(courses),
         }),
       )
       .catch(next)
@@ -18,10 +17,10 @@ class MyfrofileController {
     Course.findDeleted() //dk thuoc tinh Deleted trong DB
       .then((courses) =>
         res.render('myprofile/trashCourse', {
-          courses: MultiResponseToObject(courses),
+          courses: CopyDB.MultiResponseToObject(courses),
         }),
       )
       .catch(next)
   }
 }
-module.exports = new MyfrofileController()
+export default new MyfrofileController()

@@ -1,10 +1,8 @@
-const Product = require('../models/Products')
-const { MultiResponseToObject } = require('../../util/mongoose')
-const path = require('path')
-var url = require('url')
-const { search } = require('../../routes/phoneList')
+import Product from '../models/Products.js'
+import CopyDB from '../../util/mongoose.js'
+import url from 'url'
 
-class NewsController {
+class PhonesController {
   //[GET] /phoneList
   show(req, res, next) {
     let type_search = req.query.type || ''
@@ -14,7 +12,6 @@ class NewsController {
 
     Product.find({})
       .then((products) => {
-        
         let filterArr1 = products.map((item, index) => {
           return item.type
         })
@@ -40,15 +37,15 @@ class NewsController {
 
       .then((objectProduct) => {
         // console.log(filter_product)
-        res.render('phoneList', {
-          products: MultiResponseToObject(objectProduct.products),
+        res.render('phones/phoneList', {
+          products: CopyDB.MultiResponseToObject(objectProduct.products),
           typeList: objectProduct.AllTypes,
           pathname: url.parse(req.originalUrl).pathname,
           response: type_search || '',
           pagination: {
-            page: page,       // The current page the user is on
-            pageCount: 7  // The total number of available pages
-          }
+            page: page, // The current page the user is on
+            pageCount: 7, // The total number of available pages
+          },
         })
       })
 
@@ -56,4 +53,4 @@ class NewsController {
   }
   //[GET] /news/:slug
 }
-module.exports = new NewsController()
+export default new PhonesController()

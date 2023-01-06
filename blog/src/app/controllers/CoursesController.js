@@ -1,13 +1,12 @@
-const Course = require('../models/Courses')
-const { SingleResponseToObject } = require('../../util/mongoose')
-const mongoose = require('../../util/mongoose')
+import Course from '../models/Courses.js';
+import CopyDB  from '../../util/mongoose.js';
 
 class CoursesController {
   //[GET] /courses/:slug
   show(req, res, next) {
     Course.findOne({ slug: req.params.slug })
       .then((course) => {
-        res.render('courses/show', { course: SingleResponseToObject(course) })
+        res.render('courses/show', { course: CopyDB.SingleResponseToObject(course) })
       })
       .catch(next)
   }
@@ -30,7 +29,7 @@ class CoursesController {
   edit(req, res, next) {
     Course.findOne({ _id: req.params.id })
       .then((course) => {
-        res.render('courses/edit', { course: SingleResponseToObject(course) })
+        res.render('courses/edit', { course: CopyDB.SingleResponseToObject(course) })
       })
       .catch(next)
   }
@@ -69,4 +68,4 @@ class CoursesController {
       .catch(next)
   }
 }
-module.exports = new CoursesController()
+export default new CoursesController()

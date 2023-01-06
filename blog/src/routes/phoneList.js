@@ -1,8 +1,9 @@
-const express = require('express')
+import express from 'express';
+import PhonesController from '../app/controllers/PhonesController.js';
 const router = express.Router()
-const newsController = require('../app/controllers/NewsController')
+
 
 // router.get('/phone-list', newsController.show)
-router.get('/', newsController.show)
+router.get('/', PhonesController.show)
 
-module.exports = router
+export default router

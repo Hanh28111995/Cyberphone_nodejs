@@ -1,8 +1,8 @@
-const express = require('express')
+import express from 'express';
+import myprofileController from '../app/controllers/MyfrofileController.js';
 const router = express.Router()
-const myprofileController = require('../app/controllers/MyfrofileController')
 
 router.get('/my-courses', myprofileController.savedCourse)
 router.get('/trash/courses', myprofileController.trashCourse)
 
-module.exports = router
+export default router

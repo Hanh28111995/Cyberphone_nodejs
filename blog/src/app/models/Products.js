@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const slug = require('mongoose-slug-generator')
-const mongooseDelete = require('mongoose-delete')
+import mongoose from 'mongoose';
+import slug from 'mongoose-slug-generator';
+import mongooseDelete from 'mongoose-delete';
 
 const Schema = mongoose.Schema
 const Product = new Schema(
@@ -16,6 +16,9 @@ const Product = new Schema(
     slug: { type: String, slug: 'type', unique: true },
   },
   {
+    collection: 'products'
+  },
+  {
     timestamps: true,
     versionKey: false,
   },
@@ -28,7 +31,7 @@ Product.plugin(mongooseDelete, {
   overrideMethods: 'all',
 })
 
-module.exports = mongoose.model('Product', Product)
+export default mongoose.model('Product', Product)
 
 
 

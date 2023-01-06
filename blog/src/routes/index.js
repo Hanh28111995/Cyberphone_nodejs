@@ -1,19 +1,20 @@
-const newsRouter = require('./phoneList');
-const sitesRouter = require('./site');
-const coursesRouter = require('./courses');
-const myprofileRouter = require('./myProfile');
+import phonesRouter from './phoneList.js';
+import sitesRouter from './site.js';
+import coursesRouter from './courses.js';
+import myprofileRouter from './myProfile.js';
 
 
-function route(app) {
+export default function route(app) {
   // app.get('/', (req, res) => {
   //     return res.render('home');
   // });
 
   
   app.use('/courses', coursesRouter);
-  app.use('/', sitesRouter);
-  app.use('/phone-list', newsRouter);
   app.use('/my-profile',myprofileRouter)
+
+  app.use('/', sitesRouter);
+  app.use('/phone-list', phonesRouter);
 
   // app.get('/search', (req, res) => {
   //     return res.render('search');
@@ -25,4 +26,4 @@ function route(app) {
   //     return res.send('');
   // });
 }
-module.exports = route;
+
