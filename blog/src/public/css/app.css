@@ -302,7 +302,7 @@ header {
 .signupPage,
 .loginPage {
   width: 100%;
-  min-width: 412px;
+  min-width: 375px;
   padding-top: 150px;
   display: flex;
   justify-content: center; }
@@ -335,7 +335,8 @@ header {
         /* identical to box height */
         letter-spacing: 0.1em;
         color: #2a73dd;
-        text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9); }
+        text-shadow: 5px -5px 10px rgba(209, 217, 230, 0.2), 5px 5px 13px rgba(209, 217, 230, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9);
+        margin: 0; }
       .signupPage .card .card-body a,
       .loginPage .card .card-body a {
         text-align: center; }
@@ -394,10 +395,14 @@ header {
   @media only screen and (min-width: 300px) and (max-width: 500px) {
     .signupPage .card,
     .loginPage .card {
-      width: 18rem; }
+      width: 100%; }
     .signupPage .card-body,
     .loginPage .card-body {
-      width: 15rem; }
+      width: 80% !important; }
+    .signupPage form,
+    .loginPage form {
+      width: 100%;
+      text-align: center; }
     .signupPage h2,
     .loginPage h2 {
       font-size: 20px; }
@@ -406,12 +411,19 @@ header {
       font-size: 10px; }
     .signupPage button,
     .loginPage button {
-      width: 10rem; }
+      width: 50% !important;
+      margin-left: auto;
+      margin-right: auto; }
+      .signupPage button h2,
+      .loginPage button h2 {
+        font-size: 24px !important; }
     .signupPage .input-box,
     .loginPage .input-box {
-      width: 10rem;
-      height: 2rem; }
+      width: 80% !important;
+      height: 2rem;
+      margin-left: auto;
+      margin-right: auto; }
     .signupPage input,
     .loginPage input {
-      width: 9rem;
+      width: 80% !important;
       font-size: 12px; } }

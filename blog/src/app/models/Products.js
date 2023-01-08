@@ -14,6 +14,8 @@ const Product = new Schema(
     desc: { type: String },
     type: { type: String },
     slug: { type: String, slug: 'type', unique: true },
+    New: { type: String },
+
   },
   {
     collection: 'products'

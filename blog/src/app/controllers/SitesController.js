@@ -9,22 +9,13 @@ class SitesController {
   index(req, res, next) {
     Product.find({})
       .then((products) => {
+        let NewProduct = products.filter((item) => ['true'].includes(item.New))
         res.render('home', {
-          products: CopyDB.MultiResponseToObject(products),
+          products: CopyDB.MultiResponseToObject(NewProduct),
           pathname: url.parse(req.originalUrl).pathname,
         })
       })
       .catch(next)
-  }
-
-  // [GET] / render form sign-up
-  signup(req, res, next) {
-    res.render('signup', {
-      errors: {
-        error_username: '',
-        error_password: '',
-      },
-    })
   }
 
   // [POST] /submit form sign up
@@ -39,10 +30,11 @@ class SitesController {
       errors.array().map((item, index) => {
         if (item.param === 'password') error_password.push(item)
       })
-      return res.status(400).render('signup', {
+      return res.render('signup', {
         errors: {
           error_username: error_username[0]?.msg,
           error_password: error_password[0]?.msg,
+          resutt: 'Tao tai khoan khong thanh cong',
         },
       })
     }
@@ -50,14 +42,28 @@ class SitesController {
       username: req.body.username,
       password: req.body.password,
     })
-      .then((user) => {
-        res.json(user)
-       
-      })
+     .then((user) => {
+        res.render('signup', {
+          errors: {
+            error_username: '',
+            error_password: '',
+            resutt: 'Tao tai khoan thanh cong',
+          },
+        })
+      }) 
       .catch(next)
-
-    // .catch(next)
   }
+
+  // [GET] /render form sign-up
+  signup(req, res, next) {
+    res.render('signup', {
+      errors: {
+        error_username: '',
+        error_password: '',
+      },
+    })
+  }
+
 
   // [GET] /  render form log-in
   login(req, res, next) {

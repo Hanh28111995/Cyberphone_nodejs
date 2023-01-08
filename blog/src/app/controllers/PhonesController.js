@@ -29,14 +29,12 @@ class PhonesController {
           SToA = stringToArr.toString().split(',')
         }
         /// convert query param type to array
-        let filter_product = products.filter((item) => SToA.includes(item.type))
-
+        let  filter_product = products.filter((item) => SToA.includes(item.type))
         let pageFilter_products = filter_product.slice(skip, skip + pageSize)
         return { AllTypes, products: pageFilter_products }
       })
 
       .then((objectProduct) => {
-        // console.log(filter_product)
         res.render('phones/phoneList', {
           products: CopyDB.MultiResponseToObject(objectProduct.products),
           typeList: objectProduct.AllTypes,
