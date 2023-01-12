@@ -35,6 +35,7 @@ class PhonesController {
       })
 
       .then((objectProduct) => {
+        console.log(req.headers)
         res.render('phones/phoneList', {
           products: CopyDB.MultiResponseToObject(objectProduct.products),
           typeList: objectProduct.AllTypes,
