@@ -96,11 +96,7 @@ header {
   #footer a, #footer p {
     font-size: 10px; } }
 
-@media screen and (max-width: 412px) {
-  #footer a, #footer p {
-    font-size: 8px; } }
-
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   #footer a, #footer p {
     font-size: 8px; } }
 
@@ -120,7 +116,7 @@ header {
     color: #353536;
     letter-spacing: 0.015rem;
     margin-bottom: 25px; }
-  @media screen and (max-width: 412px) {
+  @media screen and (max-width: 414px) {
     #carousel h1 {
       font-size: 50px; } }
 
