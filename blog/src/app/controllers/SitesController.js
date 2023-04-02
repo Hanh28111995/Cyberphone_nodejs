@@ -42,15 +42,15 @@ class SitesController {
       username: req.body.username,
       password: req.body.password,
     })
-     .then((user) => {
-        res.render('signup', {
-          errors: {
+      .then((user) => {
+        res.json(
+          {
             error_username: '',
             error_password: '',
             resutt: 'Tao tai khoan thanh cong',
-          },
-        })
-      }) 
+
+          })
+      })
       .catch(next)
   }
 

@@ -24,7 +24,7 @@ class CoursesController {
         res.redirect('/my-profile/my-courses')
       })
       .catch(next)
-  }
+  }       
   //[GET] /courses/:ID/edit
   edit(req, res, next) {
     Course.findOne({ _id: req.params.id })
