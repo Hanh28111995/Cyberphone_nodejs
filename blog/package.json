@@ -13,6 +13,7 @@
     "mongoose": "^6.8.0",
     "mongoose-delete": "^0.5.4",
     "mongoose-slug-generator": "^1.0.4",
+    "sass": "^1.80.5",
     "slick-carousel": "^1.8.1"
   },
   "name": "blog",
@@ -54,7 +55,6 @@
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "morgan": "^1.10.0",
-    "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1"
   }
