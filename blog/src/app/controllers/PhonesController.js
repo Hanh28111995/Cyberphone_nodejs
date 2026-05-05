@@ -46,25 +46,9 @@ class PhonesController {
       }
       let pageFilter_products = filter_product.slice(skip, skip + pageSize)
       
-      let objectProduct = { AllTypes, products: pageFilter_products }
+      let objectProduct = { AllTypes, products: pageFilter_products }      
 
-      const allProducts = objectProduct.products;
-
-const top5Products = allProducts
-    .sort((a, b) => {
-        // Hàm bổ trợ để biến chuỗi "28.990.000 ₫" thành số 28990000
-        const parsePrice = (priceStr) => {
-            if (!priceStr) return 0;
-            // Dùng Regex xóa tất cả ký tự không phải là số
-            return Number(priceStr.replace(/[^0-9]/g, ""));
-        };
-
-        return parsePrice(b.price) - parsePrice(a.price); // Sắp xếp giảm dần
-    })
-    .slice(0, 5); 
-
-      res.render('phones/phoneList', {
-        newProducts: top5Products,
+      res.render('phones/phoneList', {        
         products: objectProduct.products, // JSON đã là object thường, không cần CopyDB.MultiResponseToObject
         typeList: objectProduct.AllTypes,
         pathname: url.parse(req.originalUrl).pathname,

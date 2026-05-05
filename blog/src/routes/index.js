@@ -17,14 +17,21 @@ export default function route(app) {
     try {
       const jsonPath = path.join(__dirname, '../util/phone_data.json');
       const fileData = fs.readFileSync(jsonPath, 'utf8');
-      const products = fileData.trim() ? JSON.parse(fileData) : [];
-
+      const products = fileData.trim() ? JSON.parse(fileData) : [];            
       const newProducts = products
-        .filter((p) => String(p.New).toLowerCase() === 'true')
-        .slice(0, 10);
+          .sort((a, b) => {
+              // Hàm bổ trợ để biến chuỗi "28.990.000 ₫" thành số 28990000
+              const parsePrice = (priceStr) => {
+                  if (!priceStr) return 0;
+                  // Dùng Regex xóa tất cả ký tự không phải là số
+                  return Number(priceStr.replace(/[^0-9]/g, ""));
+              };
+      
+              return parsePrice(b.price) - parsePrice(a.price); // Sắp xếp giảm dần
+          });          
 
       return res.render('home', {
-        products: newProducts.length ? newProducts : products.slice(0, 10),
+        products: newProducts?.slice(0, 5),
         pathname: url.parse(req.originalUrl).pathname,
       });
     } catch (e) {
