@@ -24,71 +24,70 @@
 </section>
 
 <section class="products section">
-    <h2 class="section-title">-New Products-</h2>
-    <div id="filter" class="customed-select mb-5" style="display:none">
-        <select id="myOptions" onchange="getListPhones()">
-            <option value="none" selected>Choose your product</option>
-            <option value="Phone">Phone</option>
-            <option value="Accessory">Accessory</option>
-        </select>
-    </div>
+    <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">-Top Premium Products-</h2>
 
-    {{!-- CSS này xử lý việc chỉ hiện 5 item và chống tràn text --}}
     <style>
-        /* Chỉ hiển thị 5 item đầu tiên */
-        #phoneList .item-product:nth-child(n+6) {
-            display: none !important;
+        /* CSS hỗ trợ Slick Slider để các card luôn cao bằng nhau */
+        .slick-track {
+            display: flex !important;
+            align-items: stretch !important;
         }
-
-        /* Chống tràn text và giữ các card bằng nhau */
-        .card-title-limit {
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 1.5em;
+        .slick-slide {
+            height: auto !important;
+            display: flex !important;
+            justify-content: center;
         }
-
-        .card-text-limit {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 4.5em; /* Đảm bảo bằng 3 dòng text */
+        /* Style cho các nút điều hướng của Slick (tùy chọn) */
+        .slick-dots {
+            bottom: -35px;
+        }
+        .slick-prev:before, .slick-next:before {
+            color: #333; /* Đổi màu mũi tên nếu cần */
         }
     </style>
 
     <div class="products__content container-fluid">
-        <div class="your-class row" id="phoneList" style="display: flex; flex-wrap: wrap; margin: 0 -15px;">
-            {{#each products}}
-            <div class="item-product col-md-4 col-sm-6" style="padding: 15px; display: flex;">
-                <div class="card cardPhone" style="display: flex; flex-direction: column; width: 100%; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff;">
+        <!-- class 'your-class' là nơi Slick sẽ khởi tạo -->
+        <div class="your-class" id="phoneList" style="margin: 0 -10px;">
+            {{#each newProducts}}
+            <div class="item-product" style="padding: 10px; outline: none;">
+                <div class="card cardPhone" style="display: flex; flex-direction: column; width: 100%; height: 100%; border: 1px solid #ececec; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
                     
-                    <img src="{{this.img}}" alt="..." style="width: 100%; height: 200px; object-fit: contain; background: #f8f8f8; padding: 10px;">
+                    <!-- Ảnh sản phẩm -->
+                    <div style="width: 100%; height: 200px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                        <img src="{{this.img}}" alt="{{this.name}}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                    </div>
                     
-                    <div class="card-body" style="display: flex; flex-direction: column; flex: 1; padding: 15px;">
-                        <div style="margin-bottom: 10px;">
-                            <h3 class="card-title-limit" style="font-size: 1.1rem; font-weight: bold; margin: 0;">
+                    <!-- Nội dung Card -->
+                    <div class="card-body" style="display: flex; flex-direction: column; flex: 1; padding: 20px;">
+                        <div style="margin-bottom: 12px;">
+                            <!-- Tên sản phẩm: Giới hạn đúng 1 dòng, tràn sẽ hiện '...' -->
+                            <h3 style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; min-height: 1.4em; font-size: 1.1rem; font-weight: 700; margin: 0; color: #2c3e50;">
                                 {{this.name}}
                             </h3>
-                            <h3 style="color: #e74c3c; font-size: 1.2rem; font-weight: bold; margin: 5px 0;">
+                            <!-- Giá sản phẩm -->
+                            <p style="color: #e74c3c; font-size: 1.25rem; font-weight: 800; margin: 8px 0 0 0;">
                                 {{this.price}}
-                            </h3>
+                            </p>
                         </div>
 
-                        <p class="card-text-limit" style="font-size: 0.9rem; color: #666; margin-bottom: 15px; line-height: 1.5em;">
+                        <!-- Mô tả sản phẩm: Giới hạn đúng 3 dòng để card luôn đều nhau -->
+                        <p style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em; font-size: 0.9rem; color: #7f8c8d; line-height: 1.5em; margin-bottom: 20px;">
                             {{this.desc}}
                         </p>
 
-                        <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+                        <!-- Phần nút bấm: Luôn nằm dưới cùng nhờ margin-top: auto -->
+                        <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f1f1; pt: 15px; padding-top: 15px;">
                             <div class="cardPhone__detail">
-                                <button class="open-detail" onclick="open_d('{{this.slug}}')" style="background: none; border: none; color: #007bff; cursor: pointer; padding: 0; font-size: 0.85rem;">
-                                    <i>Show detail >></i>
+                                <button class="open-detail" onclick="open_d('{{this.slug}}')" style="background: none; border: none; color: #3498db; cursor: pointer; padding: 0; font-size: 0.85rem; font-weight: 600; font-style: italic;">
+                                    Show detail >>
                                 </button>
                             </div>
-                            <button class="btnPhone-shadow" onclick="addAction('{{this.slug}}')" style="padding: 8px 12px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: bold;">
-                                <i class="fa fa-shopping-cart"></i> Buy Now
-                            </button>
+                            <div>
+                                <button class="btnPhone-shadow" onclick="addAction('{{this.slug}}')" style="padding: 8px 16px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 700; box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);">
+                                    <i class="fa fa-shopping-cart" style="margin-right: 5px;"></i> Buy Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
