@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 // call action for API
 app.use(express.static(path.join(__dirname, '/public')))
 //connect to DB
-connect()
+// connect()
 app.use(
   express.urlencoded({
     extended: true,
