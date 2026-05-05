@@ -1,6 +1,7 @@
 import phonesRouter from './phoneList.js';
 import cartRouter from './cart.js';
 import accesoriesRouter from './accesories.js';
+import blogRouter from './blog.js';
 import fs from 'fs';
 import path from 'path';
 import url from 'url';
@@ -37,6 +38,7 @@ export default function route(app) {
   // Đảm bảo route /phone-list được đăng ký
   app.use('/phone-list', phonesRouter);
   app.use('/accesories', accesoriesRouter);
+  app.use('/blog', blogRouter);
   app.use('/cart', cartRouter);
 }
 

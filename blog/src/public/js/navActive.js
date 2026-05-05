@@ -19,10 +19,8 @@ const checkPathToActive = (pathnameIndex) => {
 
   if (normalized === '/blog' || normalized.startsWith('/blog/')) return activeNav(3)
 
-  if (normalized === '/login' || normalized === '/signup') return activeNav(4)
-
-  if (normalized === '/cart' || normalized.startsWith('/cart/')) return activeNav(5)
-  }
+  if (normalized === '/cart' || normalized.startsWith('/cart/')) return activeNav(4)
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   checkPathToActive(window.location.pathname)

@@ -30,10 +30,10 @@
 
   const call_slick = () => {
     $('.your-class').slick({
-      speed: 1000,
+      speed: 1500,
       slidesToScroll: 1,
-      autoplay: false,
-      infinite: false,
+      autoplay: true,
+      infinite: true,
       arrows: true,
       // slidesToShow: 4 ,
     })

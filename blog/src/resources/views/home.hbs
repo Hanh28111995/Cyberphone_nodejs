@@ -23,7 +23,7 @@
     </div>
 </section>
 
-<section class="products section ">
+<section class="products section">
     <h2 class="section-title">-New Products-</h2>
     <div id="filter" class="customed-select mb-5" style="display:none">
         <select id="myOptions" onchange="getListPhones()">
@@ -32,54 +32,63 @@
             <option value="Accessory">Accessory</option>
         </select>
     </div>
-    <div class="products__content  container-fluid">
-        <div class="your-class" id="phoneList">
+    <div class="products__content container-fluid">
+        <!-- Container sử dụng flex-wrap để các item nằm cùng hàng -->
+        <div class="your-class row" id="phoneList" style="display: flex; flex-wrap: wrap;">
             {{#each products}}
-            <div class="item-product col">
-                <div class="card cardPhone">
-                    <img src="{{this.img}}" alt="...">
-                    <div class="card-body">
+            {{#if @index < 5}} {{!-- Chỉ lấy 5 item đầu tiên (index 0-4) --}}
+            <div class="item-product col-md-4 col-sm-6" style="display: flex; flex-direction: column; margin-bottom: 30px;">
+                <div class="card cardPhone" style="display: flex; flex-direction: column; height: 100%; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                    <img src="{{this.img}}" alt="..." style="width: 100%; height: 200px; object-fit: contain; background: #f8f8f8;">
+                    
+                    <div class="card-body" style="display: flex; flex-direction: column; flex-grow: 1; padding: 15px;">
                         <div class="d-flex justify-content-between" style="flex-direction: column;">
                             <div>
-                                <h3 class="cardPhone__title">{{this.name}}</h3>
+                                <!-- Giới hạn tiêu đề 1 dòng, ẩn phần tràn -->
+                                <h3 class="cardPhone__title" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.2rem; min-height: 1.5em; margin-bottom: 5px;">
+                                    {{this.name}}
+                                </h3>
                             </div>
                             <div>
-                                <h3 class="cardPhone__title">{{this.price}}</h3>
+                                <h3 class="cardPhone__title" style="color: #e74c3c; font-weight: bold; margin-bottom: 10px;">{{this.price}}</h3>
                             </div>
                         </div>
-                        <p class="cardPhone__text">{{this.desc}}</p>
-                        <div class="d-flex justify-content-between">
-                            <div class="cardPhone__detail">
-                                <button class="open-detail" onclick="open_d({{this.slug}})"><i>Show detail
-                                        >></i></button>
-                                <button class="close-detail" onclick="close_d({{this.slug}})"><i></i>Hide detail
-                                    >></i></button>
-                                <div id="inner_detail" class="inner_detail">
-                                    <table>
-                                        <tr>
-                                            <td>Screen</td>
-                                            <td>{{this.screen}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>BackCamera</td>
-                                            <td>{{this.backCamera}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>FrontCamera</td>
-                                            <td>{{this.frontCamera}}</td>
-                                        </tr>
-                                    </table>
+
+                        <!-- Giới hạn mô tả 3 dòng, ẩn phần tràn, giữ chiều cao cố định để không lệch card -->
+                        <p class="cardPhone__text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em; font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                            {{this.desc}}
+                        </p>
+
+                        <!-- Đẩy phần nút bấm xuống sát đáy card -->
+                        <div class="mt-auto" style="margin-top: auto;">
+                            <div class="d-flex justify-content-between" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="cardPhone__detail">
+                                    <button class="open-detail" onclick="open_d({{this.slug}})" style="background: none; border: none; color: blue; cursor: pointer; padding: 0; font-size: 0.8rem;">
+                                        <i>Show detail >></i>
+                                    </button>
+                                    <button class="close-detail" onclick="close_d({{this.slug}})" style="display: none; background: none; border: none; color: red; cursor: pointer; padding: 0; font-size: 0.8rem;">
+                                        <i>Hide detail >></i>
+                                    </button>
+                                    
+                                    <div id="inner_detail" class="inner_detail" style="display: none;">
+                                        <table style="font-size: 0.8rem; width: 100%;">
+                                            <tr><td>Screen</td><td>{{this.screen}}</td></tr>
+                                            <tr><td>BackCamera</td><td>{{this.backCamera}}</td></tr>
+                                            <tr><td>FrontCamera</td><td>{{this.frontCamera}}</td></tr>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="btnPhone-shadow" id="addToCartBtn_{{this.slug}}"
-                                    onclick="addAction({{this.slug}})"><i class="fa fa-shopping-cart"></i> Buy
-                                    Now</button>
+                                <div>
+                                    <button class="btnPhone-shadow" id="addToCartBtn_{{this.slug}}" onclick="addAction({{this.slug}})" style="padding: 8px 12px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                        <i class="fa fa-shopping-cart"></i> Buy Now
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {{/if}}
             {{/each}}
         </div>
     </div>

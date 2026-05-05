@@ -1,0 +1,43 @@
+<div class="container mt-5 mb-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{post.title}}</li>
+        </ol>
+    </nav>
+
+    <div class="row mt-4">
+        <div class="col-lg-8">
+            <h1 class="mb-3">{{post.title}}</h1>
+            <div class="d-flex justify-content-between align-items-center mb-4 text-muted">
+                <div>{{post.source}}</div>
+                <div>{{post.publishedAt}}</div>
+            </div>
+
+            {{#if post.image}}
+            <img src="{{post.image}}" alt="{{post.title}}" class="img-fluid rounded mb-4" style="width: 100%; max-height: 420px; object-fit: cover;">
+            {{/if}}
+
+            <p style="font-size: 1.05rem; line-height: 1.8;">{{post.excerpt}}</p>
+
+            {{#if post.url}}
+            <div class="mt-4">
+                <a class="btn btn-outline-primary" href="{{post.url}}" target="_blank" rel="noopener noreferrer">
+                    Đọc bài gốc
+                </a>
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Gợi ý</h5>
+                    <p class="card-text text-muted">Bạn có thể quay lại trang danh sách để xem thêm bài viết mới.</p>
+                    <a class="btn btn-primary" href="/blog">Về danh sách</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
