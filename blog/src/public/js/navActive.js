@@ -27,4 +27,4 @@ const checkPathToActive = (pathnameIndex) => {
 document.addEventListener('DOMContentLoaded', function () {
   checkPathToActive(window.location.pathname)
 })
-}
+
