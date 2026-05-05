@@ -2,7 +2,7 @@
   {
     "name": "Ốp lưng iPhone 15 Pro Max Silicone",
     "price": "390.000₫",
-    "img": "/image/product1.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mobile_phone_case.jpg",
     "desc": "Silicone mềm, ôm máy, chống bám vân tay, bảo vệ camera.",
     "type": "Case",
     "New": "true",
@@ -18,7 +18,7 @@
   {
     "name": "Ốp lưng Samsung Galaxy S24 Ultra chống sốc",
     "price": "290.000₫",
-    "img": "/image/product2.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Smartphone_case_cover_black.jpg",
     "desc": "Viền dày chống va đập, lưng trong suốt, dễ vệ sinh.",
     "type": "Case",
     "New": "true",
@@ -34,7 +34,7 @@
   {
     "name": "Củ sạc nhanh 20W Type-C (PD)",
     "price": "320.000₫",
-    "img": "/image/product3.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/LG_AC_ADAPTER_PA-1650-43.jpg",
     "desc": "Hỗ trợ Power Delivery 20W, tương thích iPhone/iPad và Android.",
     "type": "Charger",
     "New": "true",
@@ -50,7 +50,7 @@
   {
     "name": "Củ sạc nhanh GaN 65W 2 cổng (Type-C + USB-A)",
     "price": "790.000₫",
-    "img": "/image/product4.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Netgear_DS104_-_power_adapter_Netgar_PWR-023-001-5197.jpg",
     "desc": "GaN nhỏ gọn, sạc laptop/điện thoại, tự nhận diện thiết bị.",
     "type": "Charger",
     "New": "true",
@@ -66,7 +66,7 @@
   {
     "name": "Cáp Type-C to Type-C 60W (1m)",
     "price": "150.000₫",
-    "img": "/image/product5.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/USB-cable.jpg",
     "desc": "Hỗ trợ sạc nhanh 60W, truyền dữ liệu ổn định, bền bỉ.",
     "type": "Cable",
     "New": "true",
@@ -82,7 +82,7 @@
   {
     "name": "Cáp Lightning 1m chuẩn MFi",
     "price": "220.000₫",
-    "img": "/image/product6.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Lightning_to_USB_Cable.jpg",
     "desc": "Chuẩn MFi, tương thích iPhone/iPad, sạc ổn định, an toàn.",
     "type": "Cable",
     "New": "false",
@@ -98,7 +98,7 @@
   {
     "name": "Tai nghe Bluetooth True Wireless chống ồn",
     "price": "990.000₫",
-    "img": "/image/product2.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Airpods2.jpg",
     "desc": "Chống ồn chủ động, độ trễ thấp, pin dùng tới 24 giờ (kèm hộp).",
     "type": "Earphone",
     "New": "true",
@@ -114,7 +114,7 @@
   {
     "name": "Tai nghe có dây Type-C",
     "price": "190.000₫",
-    "img": "/image/product1.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Audifonos_marca_Maxell.jpeg",
     "desc": "Cắm là dùng, micro đàm thoại, tương thích đa số Android Type-C.",
     "type": "Earphone",
     "New": "false",
@@ -130,7 +130,7 @@
   {
     "name": "Pin dự phòng 10.000mAh 20W (PD/QC)",
     "price": "450.000₫",
-    "img": "/image/product3.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2023_Powerbank_Green_Cell_PowerPlay_20_(1).jpg",
     "desc": "Nhỏ gọn, sạc nhanh 20W, hỗ trợ sạc 2 thiết bị cùng lúc.",
     "type": "PowerBank",
     "New": "true",
@@ -146,7 +146,7 @@
   {
     "name": "Pin dự phòng 20.000mAh 22.5W (3 cổng)",
     "price": "690.000₫",
-    "img": "/image/product4.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/2023_Powerbank_Green_Cell_PowerPlay_20_(1).jpg",
     "desc": "Dung lượng lớn, sạc nhanh 22.5W, có màn hình hiển thị % pin.",
     "type": "PowerBank",
     "New": "false",
@@ -162,7 +162,7 @@
   {
     "name": "Giá đỡ điện thoại để bàn xoay 360°",
     "price": "120.000₫",
-    "img": "/image/product5.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/A_phone_holder.jpg",
     "desc": "Gập gọn, xoay 360°, phù hợp học online, xem phim, livestream.",
     "type": "Stand",
     "New": "true",
@@ -178,7 +178,7 @@
   {
     "name": "Miếng dán cường lực 2.5D (trong suốt)",
     "price": "90.000₫",
-    "img": "/image/product6.png",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/I7500_with_screen_protector.jpg",
     "desc": "Độ cứng 9H, chống trầy xước, hạn chế bám vân tay.",
     "type": "ScreenProtector",
     "New": "false",

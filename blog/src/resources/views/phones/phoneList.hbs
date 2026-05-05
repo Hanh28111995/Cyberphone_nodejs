@@ -1,12 +1,12 @@
 <div class="Ads-banner container px-0">
     <div class="row mb-5">
         <div class="banner-left col-8">
-            <img id="img" class="img-fluid" onclick="changeImage()" src="./img/phone/banner/banner-left/3.png" alt="">
+            <img id="img" class="img-fluid" onclick="changeImage()" src="/img/phone/banner/banner-left/3.png" alt="">
             <script>
                 var index = 1;
                 changeImage = function () {
-                    var imgs = ["./img/phone/banner/banner-left/1.png", "./img/phone/banner/banner-left/2.png",
-                        "./img/phone/banner/banner-left/3.png", "./img/phone/banner/banner-left/4.png"]
+                    var imgs = ["/img/phone/banner/banner-left/1.png", "/img/phone/banner/banner-left/2.png",
+                        "/img/phone/banner/banner-left/3.png", "/img/phone/banner/banner-left/4.png"]
                     document.getElementById('img').src = imgs[index];
                     index++;
                     if (index == 4) {
@@ -18,10 +18,10 @@
         </div>
         <div class="banner-right col-4">
             <div class="banner-right-top">
-                <img class="img-fluid" src="./img/phone/banner/banner-right/euro-m51-390-97-390x97.png" alt="">
+                <img class="img-fluid" src="/img/phone/banner/banner-right/euro-m51-390-97-390x97.png" alt="">
             </div>
             <div class="banner-right-bottom">
-                <img class="img-fluid" src="./img/phone/banner/banner-right/sticky-A15-15s-390-97-390x97.png" alt="">
+                <img class="img-fluid" src="/img/phone/banner/banner-right/sticky-A15-15s-390-97-390x97.png" alt="">
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
             if (item === 'Others') {
                 btnContent = `<div style="width: 120px; height: 35px; line-height: 35px; text-align: center; font-weight: bold; font-size: 16px; color: #333;">Khác</div>`;
             } else {
-                btnContent = `<img class="img-fluid" src="./img/phone/phanloai/${item}.jpg" alt="${item}" style="max-height: 35px;">`;
+                btnContent = `<img class="img-fluid" src="/img/phone/phanloai/${item}.jpg" alt="${item}" style="max-height: 35px;">`;
             }
             
             content += `  
