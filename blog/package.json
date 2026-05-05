@@ -24,6 +24,8 @@
     "beautiful": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
+    "update-data": "node src/util/update-api-data.js",
+    "crawl": "node src/util/crawler.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

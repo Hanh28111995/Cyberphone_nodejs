@@ -1,6 +1,14 @@
-import Product from '../models/Products.js'
 import CopyDB from '../../util/mongoose.js'
 import url from 'url'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import https from 'https'
+import http from 'http'
+import crypto from 'crypto'
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class PhonesController {
   //[GET] /phoneList
@@ -10,46 +18,72 @@ class PhonesController {
     let pageSize = 9
     let skip = (page - 1) * pageSize
 
-    Product.find({})
-      .then((products) => {
-        let filterArr1 = products.map((item, index) => {
-          return item.type
-        })
-        let AllTypes = filterArr1.reduce(
-          (unique, item) =>
-            unique.includes(item) ? unique : [...unique, item],
-          [],
-        )
-        let SToA = []
-        if (type_search === '') {
-          SToA = AllTypes
-        } else {
-          let stringToArr = []
-          stringToArr.push(type_search)
-          SToA = stringToArr.toString().split(',')
-        }
-        /// convert query param type to array
-        let  filter_product = products.filter((item) => SToA.includes(item.type))
-        let pageFilter_products = filter_product.slice(skip, skip + pageSize)
-        return { AllTypes, products: pageFilter_products }
-      })
+    try {
+      // Đọc dữ liệu từ file JSON
+      const jsonPath = path.join(__dirname, '../../util/phone_data.json');
+      const fileData = fs.readFileSync(jsonPath, 'utf8');
+      const products = JSON.parse(fileData);
 
-      .then((objectProduct) => {
-        console.log(req.headers)
-        res.render('phones/phoneList', {
-          products: CopyDB.MultiResponseToObject(objectProduct.products),
-          typeList: objectProduct.AllTypes,
-          pathname: url.parse(req.originalUrl).pathname,
-          response: type_search || '',
-          pagination: {
-            page: page, // The current page the user is on
-            pageCount: 7, // The total number of available pages
-          },
-        })
-      })
+      // Đảm bảo chỉ truyền 5 option tĩnh sang view
+      let AllTypes = ['Apple', 'Samsung', 'Xiaomi', 'Oppo', 'Others'];
+      
+      let filter_product = products;
 
-      .catch(next)
+      if (type_search !== '') {
+        filter_product = products.filter((item) => {
+          let typeLower = item.type.toLowerCase();
+          let mainBrands = ['apple', 'samsung', 'xiaomi', 'oppo'];
+          let isMainBrand = mainBrands.includes(typeLower);
+          
+          // Kiểm tra xem type của sản phẩm có khớp với hãng đang chọn không
+          let matchedMain = type_search.toLowerCase() === typeLower;
+          
+          // Nếu người dùng chọn "Others"
+          let matchedOthers = type_search.toLowerCase() === 'others' && !isMainBrand;
+          
+          return matchedMain || matchedOthers;
+        });
+      }
+      let pageFilter_products = filter_product.slice(skip, skip + pageSize)
+      
+      let objectProduct = { AllTypes, products: pageFilter_products }
+
+      res.render('phones/phoneList', {
+        products: objectProduct.products, // JSON đã là object thường, không cần CopyDB.MultiResponseToObject
+        typeList: objectProduct.AllTypes,
+        pathname: url.parse(req.originalUrl).pathname,
+        response: type_search || '',
+        pagination: {
+          page: page, // The current page the user is on
+          pageCount: Math.ceil(filter_product.length / pageSize), // Calculate real page count
+        },
+      })
+    } catch (error) {
+      console.log('Lỗi đọc file JSON:', error);
+      next(error);
+    }
   }
-  //[GET] /news/:slug
+  
+  //[GET] /phone-list/:slug
+  detail(req, res, next) {
+    try {
+      const jsonPath = path.join(__dirname, '../../util/phone_data.json');
+      const fileData = fs.readFileSync(jsonPath, 'utf8');
+      const products = JSON.parse(fileData);
+      
+      const phone = products.find(p => p.slug === req.params.slug);
+      
+      if (!phone) {
+        return res.status(404).send('Không tìm thấy điện thoại!');
+      }
+
+      res.render('phones/phoneDetail', {
+        phone: phone
+      });
+    } catch (error) {
+      console.log('Lỗi lấy thông tin chi tiết:', error);
+      next(error);
+    }
+  }
 }
 export default new PhonesController()

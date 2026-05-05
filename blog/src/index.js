@@ -3,6 +3,7 @@ import methodOverride from 'method-override';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import hbs from 'express-handlebars';
+import cookieParser from 'cookie-parser';
 import paginate from 'handlebars-paginate';
 import morgan from 'morgan';
 import { Console } from 'console';
@@ -31,6 +32,22 @@ app.use(
 ) //xu li request value từ Form data
 app.use(express.json()) //xu li request value từ js (xmlHttprequest, fetch, axios)
 app.use(methodOverride('_method'))
+app.use(cookieParser()) // Parser cho cookie
+// Middleware đếm số lượng item trong giỏ hàng và gán vào views
+app.use((req, res, next) => {
+  let cart = [];
+  if (req.cookies && req.cookies.cart) {
+    try {
+      cart = JSON.parse(req.cookies.cart);
+    } catch (e) {
+      console.error('Lỗi parse giỏ hàng', e);
+    }
+  }
+  const cartCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+  res.locals.cartCount = cartCount;
+  next();
+});
+
 //http logger
 // app.use(morgan('combined'))
 

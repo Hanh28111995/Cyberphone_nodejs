@@ -1,0 +1,442 @@
+[
+  {
+    "name": "iPhone 15 Pro Max",
+    "price": "34.990.000 ₫",
+    "screen": "6.7 inch - 1290 x 2796 pixels",
+    "backCamera": "48 MP + 12 MP + 12 MP",
+    "frontCamera": "12 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro-max.jpg",
+    "desc": "Khung Titanium siêu bền, chip Apple A17 Pro mạnh mẽ, camera zoom quang 5x",
+    "type": "Apple",
+    "New": "true",
+    "slug": "iphone-15-pro-max",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "Super Retina XDR OLED",
+        "Kích thước": "6.7 inch",
+        "Độ phân giải": "1290 x 2796 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "48 MP + 12 MP + 12 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "12 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "iOS 17",
+        "RAM": "12 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "4422 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Apple",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "iPhone 15 Pro",
+    "price": "28.990.000 ₫",
+    "screen": "6.1 inch - 1179 x 2556 pixels",
+    "backCamera": "48 MP + 12 MP + 12 MP",
+    "frontCamera": "12 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro.jpg",
+    "desc": "Thiết kế gọn gàng, sức mạnh Pro, cổng USB-C tốc độ cao",
+    "type": "Apple",
+    "New": "true",
+    "slug": "iphone-15-pro",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "Super Retina XDR OLED",
+        "Kích thước": "6.1 inch",
+        "Độ phân giải": "1179 x 2556 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "48 MP + 12 MP + 12 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "12 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "iOS 17",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "4422 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Apple",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": "33.990.000 ₫",
+    "screen": "6.8 inch - 1440 x 3120 pixels",
+    "backCamera": "200 MP + 50 MP + 12 MP + 10 MP",
+    "frontCamera": "12 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-ultra-5g-sm-s928.jpg",
+    "desc": "Kỷ nguyên AI trên điện thoại, camera 200MP, bút S-Pen thông minh",
+    "type": "Samsung",
+    "New": "true",
+    "slug": "samsung-galaxy-s24-ultra",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.8 inch",
+        "Độ phân giải": "1440 x 3120 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "200 MP + 50 MP + 12 MP + 10 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "12 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "12 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Samsung",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S24+",
+    "price": "26.990.000 ₫",
+    "screen": "6.7 inch - 1440 x 3120 pixels",
+    "backCamera": "50 MP + 10 MP + 12 MP",
+    "frontCamera": "12 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-plus-5g-sm-s926.jpg",
+    "desc": "Màn hình lớn sắc nét, pin trâu, tích hợp Galaxy AI",
+    "type": "Samsung",
+    "New": "false",
+    "slug": "samsung-galaxy-s24-plus",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.7 inch",
+        "Độ phân giải": "1440 x 3120 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 10 MP + 12 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "12 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Samsung",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Xiaomi 14 Ultra",
+    "price": "32.990.000 ₫",
+    "screen": "6.73 inch - 1440 x 3200 pixels",
+    "backCamera": "50 MP + 50 MP + 50 MP + 50 MP",
+    "frontCamera": "32 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14-ultra-new.jpg",
+    "desc": "Đỉnh cao nhiếp ảnh di động kết hợp cùng Leica, chip Snapdragon 8 Gen 3",
+    "type": "Xiaomi",
+    "New": "true",
+    "slug": "xiaomi-14-ultra",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.73 inch",
+        "Độ phân giải": "1440 x 3200 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 50 MP + 50 MP + 50 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "32 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "12 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Xiaomi",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Xiaomi 14",
+    "price": "22.990.000 ₫",
+    "screen": "6.36 inch - 1200 x 2670 pixels",
+    "backCamera": "50 MP + 50 MP + 50 MP",
+    "frontCamera": "32 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/xiaomi-14.jpg",
+    "desc": "Thiết kế nhỏ gọn, viền siêu mỏng, ống kính Leica Summilux",
+    "type": "Xiaomi",
+    "New": "true",
+    "slug": "xiaomi-14",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.36 inch",
+        "Độ phân giải": "1200 x 2670 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 50 MP + 50 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "32 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Xiaomi",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Oppo Find N3 Flip",
+    "price": "25.990.000 ₫",
+    "screen": "6.8 inch - 1080 x 2520 pixels",
+    "backCamera": "50 MP + 48 MP + 32 MP",
+    "frontCamera": "32 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/oppo-find-n3-flip.jpg",
+    "desc": "Điện thoại gập thời trang, camera Hasselblad cao cấp",
+    "type": "Oppo",
+    "New": "false",
+    "slug": "oppo-find-n3-flip",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.8 inch",
+        "Độ phân giải": "1080 x 2520 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 48 MP + 32 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "32 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Oppo",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Oppo Find X7 Ultra",
+    "price": "27.990.000 ₫",
+    "screen": "6.82 inch - 1440 x 3168 pixels",
+    "backCamera": "50 MP + 50 MP + 50 MP + 50 MP",
+    "frontCamera": "32 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x7-ultra.jpg",
+    "desc": "Camera kép tiềm vọng độc quyền, thiết kế da sang trọng",
+    "type": "Oppo",
+    "New": "true",
+    "slug": "oppo-find-x7-ultra",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.82 inch",
+        "Độ phân giải": "1440 x 3168 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 50 MP + 50 MP + 50 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "32 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Oppo",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Vivo X100 Pro",
+    "price": "24.990.000 ₫",
+    "screen": "6.78 inch - 1260 x 2800 pixels",
+    "backCamera": "50 MP + 50 MP + 50 MP",
+    "frontCamera": "32 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/vivo-x100-pro.jpg",
+    "desc": "Camera Zeiss đẳng cấp, chip Dimensity 9300 mạnh mẽ",
+    "type": "Vivo",
+    "New": "true",
+    "slug": "vivo-x100-pro",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.78 inch",
+        "Độ phân giải": "1260 x 2800 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 50 MP + 50 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "32 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Vivo",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  },
+  {
+    "name": "Realme 12 Pro+",
+    "price": "12.990.000 ₫",
+    "screen": "6.7 inch - 1080 x 2412 pixels",
+    "backCamera": "50 MP + 64 MP + 8 MP",
+    "frontCamera": "32 MP",
+    "img": "https://wsrv.nl/?url=https://fdn2.gsmarena.com/vv/bigpic/realme-12-pro-plus.jpg",
+    "desc": "Thiết kế mặt lưng da sang trọng, camera zoom tiềm vọng",
+    "type": "Realme",
+    "New": "true",
+    "slug": "realme-12-pro-plus",
+    "fullSpecs": {
+      "Màn hình (Display)": {
+        "Công nghệ màn hình": "AMOLED",
+        "Kích thước": "6.7 inch",
+        "Độ phân giải": "1080 x 2412 pixels",
+        "Tần số quét": "120Hz"
+      },
+      "Camera sau (Main Camera)": {
+        "Độ phân giải": "50 MP + 64 MP + 8 MP",
+        "Quay phim": "4K@60fps, 1080p@240fps",
+        "Đèn Flash": "LED flash, HDR, panorama"
+      },
+      "Camera trước (Selfie)": {
+        "Độ phân giải": "32 MP",
+        "Tính năng": "HDR, Nhận diện khuôn mặt"
+      },
+      "Cấu hình & Hiệu năng": {
+        "Hệ điều hành": "Android 14",
+        "RAM": "8 GB",
+        "Bộ nhớ trong": "256 GB"
+      },
+      "Pin & Sạc": {
+        "Dung lượng pin": "5000 mAh",
+        "Hỗ trợ sạc tối đa": "Sạc siêu nhanh 65W+",
+        "Công nghệ pin": "Sạc nhanh, Sạc không dây"
+      },
+      "Thông tin chung": {
+        "Hãng sản xuất": "Realme",
+        "Bảo hành": "12 tháng chính hãng",
+        "Chất liệu": "Khung kim loại, mặt lưng kính"
+      }
+    }
+  }
+]

@@ -1,0 +1,79 @@
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4">Giỏ hàng của bạn</h2>
+    
+    {{#if isEmpty}}
+        <div class="alert alert-info text-center" role="alert">
+            Giỏ hàng đang trống. <a href="/phone-list" class="alert-link">Quay lại mua sắm</a>
+        </div>
+    {{else}}
+        <div class="table-responsive">
+            <table class="table table-bordered text-center align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Hình ảnh</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Đơn giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thành tiền</th>
+                        <th scope="col">Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each cartItems}}
+                    <tr>
+                        <td>
+                            <img src="{{this.img}}" alt="{{this.name}}" class="img-fluid" style="max-height: 80px; object-fit: contain;">
+                        </td>
+                        <td class="font-weight-bold">{{this.name}}</td>
+                        <td class="text-danger">{{this.price}}</td>
+                        <td>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button class="btn btn-sm btn-outline-secondary px-2" onclick="updateCart('{{this.slug}}', -1)">-</button>
+                                <span class="mx-3">{{this.quantity}}</span>
+                                <button class="btn btn-sm btn-outline-secondary px-2" onclick="updateCart('{{this.slug}}', 1)">+</button>
+                            </div>
+                        </td>
+                        <td class="text-danger font-weight-bold">{{this.itemTotalFormatted}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" onclick="removeFromCart('{{this.slug}}')">Xóa</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex justify-content-end align-items-center mt-4">
+            <h4 class="mr-4">Tổng cộng: <span class="text-danger font-weight-bold">{{totalPriceFormatted}}</span></h4>
+            <button class="btn btn-primary btn-lg">Thanh toán</button>
+        </div>
+    {{/if}}
+</div>
+
+<script>
+    function updateCart(slug, change) {
+        let cartCookie = getCookie('cart');
+        let cart = cartCookie ? JSON.parse(cartCookie) : [];
+        
+        let itemIndex = cart.findIndex(item => item.slug === slug);
+        if (itemIndex > -1) {
+            cart[itemIndex].quantity += change;
+            if (cart[itemIndex].quantity <= 0) {
+                cart.splice(itemIndex, 1);
+            }
+        }
+        
+        setCookie('cart', JSON.stringify(cart), { 'max-age': 3600 * 24 * 30 }); // 30 days
+        window.location.reload(); // Reload to let SSR update HTML
+    }
+
+    function removeFromCart(slug) {
+        let cartCookie = getCookie('cart');
+        let cart = cartCookie ? JSON.parse(cartCookie) : [];
+        
+        cart = cart.filter(item => item.slug !== slug);
+        
+        setCookie('cart', JSON.stringify(cart), { 'max-age': 3600 * 24 * 30 });
+        window.location.reload();
+    }
+</script>

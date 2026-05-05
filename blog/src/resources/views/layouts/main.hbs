@@ -37,6 +37,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     {{!-- Slick --}}
     <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        function setCookie(name, value, options = {}) {
+            options = {
+                path: '/',
+                ...options
+            };
+            if (options.expires instanceof Date) {
+                options.expires = options.expires.toUTCString();
+            }
+            let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+            for (let optionKey in options) {
+                updatedCookie += "; " + optionKey;
+                let optionValue = options[optionKey];
+                if (optionValue !== true) {
+                    updatedCookie += "=" + optionValue;
+                }
+            }
+            document.cookie = updatedCookie;
+        }
+
+        function addToCart(slug) {
+            let cartCookie = getCookie('cart');
+            let cart = cartCookie ? JSON.parse(cartCookie) : [];
+            
+            let itemIndex = cart.findIndex(item => item.slug === slug);
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += 1;
+            } else {
+                cart.push({ slug: slug, quantity: 1 });
+            }
+            
+            setCookie('cart', JSON.stringify(cart), { 'max-age': 3600 * 24 * 30 }); // 30 days
+            
+            // Reload page to let SSR update cart count, or redirect to cart
+            window.location.href = '/cart';
+        }
+    </script>
 </body>
 
 </html>

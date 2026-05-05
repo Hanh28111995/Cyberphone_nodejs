@@ -1,0 +1,123 @@
+<div class="container mt-5 mb-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/phone-list">Điện thoại</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{phone.name}}</li>
+        </ol>
+    </nav>
+
+    <div class="row mt-4">
+        <!-- Cột bên trái: Ảnh và Mua hàng -->
+        <div class="col-md-5 text-center mb-4">
+            <div class="sticky-top" style="top: 80px; z-index: 10;">
+                <img src="{{phone.img}}" alt="{{phone.name}}" class="img-fluid rounded" style="max-height: 450px; object-fit: contain;" fetchpriority="high">
+                
+                <div class="mt-4 p-3 border rounded shadow-sm bg-light">
+                    <h2 class="text-danger font-weight-bold">{{phone.price}}</h2>
+                    <p class="text-muted"><del>20.990.000₫</del> <span class="badge badge-danger">-28%</span></p>
+                    <button class="btn btn-danger btn-lg mt-2 w-100 font-weight-bold" onclick="addToCart('{{phone.slug}}')">
+                        THÊM VÀO GIỎ HÀNG
+                        <small class="d-block" style="font-weight: normal;">Giao hàng tận nơi miễn phí</small>
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg mt-2 w-100 font-weight-bold">MUA TRẢ GÓP 0%</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cột bên phải: Chi tiết thông số -->
+        <div class="col-md-7 pl-md-5">
+            <h1 class="mb-4 font-weight-bold text-dark">{{phone.name}}</h1>
+            
+            <!-- Cấu hình nổi bật -->
+            <div class="alert alert-info mb-4">
+                <h5 class="alert-heading"><i class="fas fa-microchip"></i> Cấu hình nổi bật</h5>
+                <hr>
+                <ul class="mb-0 pl-3">
+                    <li><strong>Màn hình:</strong> {{phone.screen}}</li>
+                    <li><strong>Camera sau:</strong> {{phone.backCamera}}</li>
+                    <li><strong>Camera trước:</strong> {{phone.frontCamera}}</li>
+                    <li><strong>Mô tả thêm:</strong> {{phone.desc}}</li>
+                </ul>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3 mt-5 border-bottom pb-2">
+                <h4 class="mb-0 font-weight-bold">Thông số kỹ thuật chi tiết</h4>
+                <button id="toggleSpecsBtn" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-compress-arrows-alt"></i> Thu gọn (Compact)
+                </button>
+            </div>
+            
+            <div class="specs-wrapper">
+                {{#each phone.fullSpecs}}
+                <div class="spec-category mb-4">
+                    <h5 class="text-primary text-uppercase font-weight-bold bg-light p-2 rounded">{{@key}}</h5>
+                    <table class="table table-sm table-striped table-bordered mt-2">
+                        <tbody>
+                            {{#each this}}
+                            <tr>
+                                <th scope="row" style="width: 35%; color: #555; vertical-align: middle;">{{@key}}</th>
+                                <td style="vertical-align: middle;">{{this}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .specs-wrapper table th {
+        font-weight: 600;
+        background-color: #f8f9fa;
+    }
+    .breadcrumb {
+        background-color: #f1f2f6;
+        border-radius: 8px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('toggleSpecsBtn');
+        if (!toggleBtn) return;
+        
+        let isCompact = false;
+        
+        // Các danh mục ít quan trọng sẽ bị ẩn đi trong chế độ Compact
+        const advancedCategories = ['Thông tin chung', 'Đánh giá', 'Camera trước (Selfie)'];
+        
+        toggleBtn.addEventListener('click', function() {
+            isCompact = !isCompact;
+            
+            const specCategories = document.querySelectorAll('.spec-category');
+            specCategories.forEach(category => {
+                const title = category.querySelector('h5').textContent.trim();
+                if (advancedCategories.includes(title)) {
+                    category.style.display = isCompact ? 'none' : 'block';
+                } else {
+                    // Đối với các danh mục được giữ lại, ta có thể ẩn bớt các hàng chi tiết (chỉ giữ 1-2 hàng đầu)
+                    const rows = category.querySelectorAll('tbody tr');
+                    rows.forEach((row, index) => {
+                        if (index > 1) { // Chỉ giữ lại 2 thông số đầu tiên của mỗi mục quan trọng
+                            row.style.display = isCompact ? 'none' : 'table-row';
+                        }
+                    });
+                }
+            });
+            
+            if (isCompact) {
+                toggleBtn.innerHTML = '<i class="fas fa-expand-arrows-alt"></i> Mở rộng (Expand)';
+                toggleBtn.classList.remove('btn-outline-secondary');
+                toggleBtn.classList.add('btn-primary');
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-compress-arrows-alt"></i> Thu gọn (Compact)';
+                toggleBtn.classList.remove('btn-primary');
+                toggleBtn.classList.add('btn-outline-secondary');
+            }
+        });
+    });
+</script>

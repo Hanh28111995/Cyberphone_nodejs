@@ -43,14 +43,16 @@
     <div class="box-common__main row ">
         {{#each products}}
         <div class="listproduct col-md-4 col-sm-4 col-xs-4 card my-2 py-5 " style="align-items: center">
-            <div class="listproduct1">
-                <img class="img-fluid" src="{{this.img}}" alt="">
-                <h5 href="#">{{this.name}}</a>
-                    <h5 style="margin-top: 6px;">Online giá rẻ</h5>
-                    <strong>{{this.price}}</strong>
-                    <h5 style="font-size: 15px;text-decoration: line-through;">20.990.000₫
-                        <span style="display: inline-block;"> -28%</span>
-                    </h5>
+            <div class="listproduct1 text-center">
+                <a href="/phone-list/{{this.slug}}" style="text-decoration: none; color: inherit;">
+                    <img class="img-fluid" src="{{this.img}}" alt="{{this.name}}" loading="lazy" decoding="async">
+                    <h5 style="margin-top: 15px; font-weight: bold;">{{this.name}}</h5>
+                </a>
+                <h5 style="margin-top: 6px;">Online giá rẻ</h5>
+                <strong class="text-danger" style="font-size: 1.2rem;">{{this.price}}</strong>
+                <h5 style="font-size: 15px;text-decoration: line-through; color: #888;">20.990.000₫
+                    <span style="display: inline-block; color: red;"> -28%</span>
+                </h5>
             </div>
         </div>
         {{/each}}
@@ -81,10 +83,17 @@
     function renderList(arr) {
         let content = "";
         arr.forEach(function (item) {
+            let btnContent = "";
+            if (item === 'Others') {
+                btnContent = `<div style="width: 120px; height: 35px; line-height: 35px; text-align: center; font-weight: bold; font-size: 16px; color: #333;">Khác</div>`;
+            } else {
+                btnContent = `<img class="img-fluid" src="./img/phone/phanloai/${item}.jpg" alt="${item}" style="max-height: 35px;">`;
+            }
+            
             content += `  
-            <a href="" id="${item}BTN" class="btn-phanloai" data-id="${item}">
-               <button class="btn btn-phanloai-child">
-               <img class="img-fluid" src="./img/phone/phanloai/${item}.jpg" alt="">
+            <a href="" id="${item}BTN" class="btn-phanloai mx-2" data-id="${item}" style="text-decoration: none;">
+               <button class="btn btn-phanloai-child" style="border: 2px solid transparent; border-radius: 8px; padding: 5px 15px; background-color: transparent; transition: all 0.3s ease;">
+               ${btnContent}
                </button>
             </a>
                    `
@@ -95,35 +104,62 @@
 
     checkPathToActive('{{pathname}}');
     document.addEventListener('DOMContentLoaded', function () {
-        let phoneName_back = ({{{ json response }}}).split(',');
-    let phoneName = [];
-    let colorCheck = '';
-    let FilterForm = document.forms['phone-filter-form']
+        let currentFilter = '{{{ response }}}';
 
-    if (phoneName_back[0] === '') {
-        phoneName_back.splice(0, 1);
-    }
-    for (let i = 0; i < phoneName_back.length; i++) {
-        $("#" + phoneName_back[i] + "BTN .btn-phanloai-child").css("background-color", "whitesmoke")
-    }
+        // Khôi phục trạng thái border của nút đang được chọn từ URL (chỉ 1 nút duy nhất)
+        if (currentFilter && currentFilter !== '') {
+            $("#" + currentFilter + "BTN .btn-phanloai-child").css("border-color", "#007bff");
+            $("#type-phone-input").val(currentFilter);
+        }
 
-    for (let i = 0; i < filterArr2.length; i++) {
-        $("#" + filterArr2[i] + "BTN").click(function (e) {
-            e.preventDefault()
-            colorCheck = $("#" + filterArr2[i] + "BTN .btn-phanloai-child")
-            if (colorCheck.css("background-color") === "rgba(0, 0, 0, 0)") {
-                colorCheck.css("background-color", "whitesmoke");
-                phoneName_back.push($(this).attr("data-id"));
-                phoneName = phoneName_back.reduce((unique, item) =>
-                    unique.includes(item) ? unique : [...unique, item], []);
-                $("#type-phone-input").val(phoneName.toString());
-            }
-            else {
-                colorCheck.css("background-color", "transparent");
-                phoneName = phoneName_back.filter(item => item !== $(this).attr("data-id"))
-                $("#type-phone-input").val(phoneName.toString());
-            }
-            FilterForm.submit();
+        for (let i = 0; i < filterArr2.length; i++) {
+            $("#" + filterArr2[i] + "BTN").click(function (e) {
+                e.preventDefault();
+                let clickedId = $(this).attr("data-id");
+                let colorCheck = $("#" + clickedId + "BTN .btn-phanloai-child");
+                
+                // Lấy ra trạng thái viền hiện tại của nút vừa click
+                let currentBorderColor = colorCheck.css("border-color");
+                
+                // Reset viền của tất cả các nút về transparent
+                $(".btn-phanloai-child").css("border-color", "transparent");
+                
+                // Nếu viền cũ là trong suốt (chưa chọn) -> Bật nó lên
+                if (currentBorderColor === "rgba(0, 0, 0, 0)" || currentBorderColor === "transparent" || currentBorderColor === "rgb(0, 0, 0)") {
+                    colorCheck.css("border-color", "#007bff");
+                    currentFilter = clickedId;
+                    $("#type-phone-input").val(currentFilter);
+                }
+                // Nếu viền cũ đang bật (đã chọn) -> Tắt nó đi (hủy lọc)
+                else {
+                    currentFilter = '';
+                    $("#type-phone-input").val('');
+                }
+            
+            // Thay vì FilterForm.submit() gây tải lại toàn bộ trang,
+            // chúng ta dùng AJAX (fetch) để chỉ re-render danh sách sản phẩm
+            let typeInput = $("#type-phone-input").val();
+            let url = window.location.pathname + "?type=" + typeInput;
+            
+            // Đổi URL trên trình duyệt
+            window.history.pushState({}, '', url);
+
+            // Fetch dữ liệu HTML mới và cập nhật DOM
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Lấy ra phần HTML chứa sản phẩm và phân trang mới
+                    const newPList = doc.querySelector('.PList').innerHTML;
+                    const newPagination = doc.querySelector('.pagination-centered').innerHTML;
+                    
+                    // Re-render (cập nhật) lại phần hiển thị trên trang
+                    document.querySelector('.PList').innerHTML = newPList;
+                    document.querySelector('.pagination-centered').innerHTML = newPagination;
+                })
+                .catch(error => console.error('Lỗi khi lọc sản phẩm:', error));
         });
     }
     })
