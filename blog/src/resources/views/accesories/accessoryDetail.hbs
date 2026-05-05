@@ -1,0 +1,65 @@
+<div class="container mt-5 mb-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/accesories">Phụ kiện</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{accessory.name}}</li>
+        </ol>
+    </nav>
+
+    <div class="row mt-4">
+        <div class="col-md-5 text-center mb-4">
+            <div class="sticky-top" style="top: 80px; z-index: 10;">
+                <img src="{{accessory.img}}" alt="{{accessory.name}}" class="img-fluid rounded" style="max-height: 450px; object-fit: contain;" fetchpriority="high">
+                
+                <div class="mt-4 p-3 border rounded shadow-sm bg-light">
+                    <h2 class="text-danger font-weight-bold">{{accessory.price}}</h2>
+                    <button class="btn btn-danger btn-lg mt-2 w-100 font-weight-bold" onclick="addToCart('{{accessory.slug}}')">
+                        THÊM VÀO GIỎ HÀNG
+                        <small class="d-block" style="font-weight: normal;">Giao hàng tận nơi miễn phí</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7 pl-md-5">
+            <h1 class="mb-3 font-weight-bold text-dark">{{accessory.name}}</h1>
+            <p class="text-muted mb-4">{{accessory.desc}}</p>
+            
+            {{#if accessory.fullSpecs}}
+            <div class="d-flex justify-content-between align-items-center mb-3 mt-4 border-bottom pb-2">
+                <h4 class="mb-0 font-weight-bold">Thông số kỹ thuật</h4>
+            </div>
+            
+            <div class="specs-wrapper">
+                {{#each accessory.fullSpecs}}
+                <div class="spec-category mb-4">
+                    <h5 class="text-primary text-uppercase font-weight-bold bg-light p-2 rounded">{{@key}}</h5>
+                    <table class="table table-sm table-striped table-bordered mt-2">
+                        <tbody>
+                            {{#each this}}
+                            <tr>
+                                <th scope="row" style="width: 35%; color: #555; vertical-align: middle;">{{@key}}</th>
+                                <td style="vertical-align: middle;">{{this}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<style>
+    .specs-wrapper table th {
+        font-weight: 600;
+        background-color: #f8f9fa;
+    }
+    .breadcrumb {
+        background-color: #f1f2f6;
+        border-radius: 8px;
+    }
+</style>

@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Ốp lưng iPhone 15 Pro Max Silicone",
+    "price": "390.000₫",
+    "img": "/image/product1.png",
+    "desc": "Silicone mềm, ôm máy, chống bám vân tay, bảo vệ camera.",
+    "type": "Case",
+    "New": "true",
+    "slug": "op-lung-iphone-15-pro-max-silicone",
+    "fullSpecs": {
+      "Thông tin chung": {
+        "Dòng máy tương thích": "iPhone 15 Pro Max",
+        "Chất liệu": "Silicone + TPU",
+        "Tính năng": "Chống trầy, chống sốc nhẹ"
+      }
+    }
+  },
+  {
+    "name": "Ốp lưng Samsung Galaxy S24 Ultra chống sốc",
+    "price": "290.000₫",
+    "img": "/image/product2.png",
+    "desc": "Viền dày chống va đập, lưng trong suốt, dễ vệ sinh.",
+    "type": "Case",
+    "New": "true",
+    "slug": "op-lung-samsung-s24-ultra-chong-soc",
+    "fullSpecs": {
+      "Thông tin chung": {
+        "Dòng máy tương thích": "Samsung Galaxy S24 Ultra",
+        "Chất liệu": "TPU + PC",
+        "Tính năng": "Chống sốc, chống ố"
+      }
+    }
+  },
+  {
+    "name": "Củ sạc nhanh 20W Type-C (PD)",
+    "price": "320.000₫",
+    "img": "/image/product3.png",
+    "desc": "Hỗ trợ Power Delivery 20W, tương thích iPhone/iPad và Android.",
+    "type": "Charger",
+    "New": "true",
+    "slug": "cu-sac-nhanh-20w-type-c-pd",
+    "fullSpecs": {
+      "Sạc": {
+        "Công suất": "20W",
+        "Cổng ra": "USB-C",
+        "Chuẩn sạc": "PD"
+      }
+    }
+  },
+  {
+    "name": "Củ sạc nhanh GaN 65W 2 cổng (Type-C + USB-A)",
+    "price": "790.000₫",
+    "img": "/image/product4.png",
+    "desc": "GaN nhỏ gọn, sạc laptop/điện thoại, tự nhận diện thiết bị.",
+    "type": "Charger",
+    "New": "true",
+    "slug": "cu-sac-gan-65w-2-cong",
+    "fullSpecs": {
+      "Sạc": {
+        "Công suất": "65W",
+        "Cổng ra": "USB-C + USB-A",
+        "Chuẩn sạc": "PD, QC"
+      }
+    }
+  },
+  {
+    "name": "Cáp Type-C to Type-C 60W (1m)",
+    "price": "150.000₫",
+    "img": "/image/product5.png",
+    "desc": "Hỗ trợ sạc nhanh 60W, truyền dữ liệu ổn định, bền bỉ.",
+    "type": "Cable",
+    "New": "true",
+    "slug": "cap-type-c-to-type-c-60w-1m",
+    "fullSpecs": {
+      "Cáp": {
+        "Chuẩn": "USB-C to USB-C",
+        "Công suất tối đa": "60W",
+        "Chiều dài": "1m"
+      }
+    }
+  },
+  {
+    "name": "Cáp Lightning 1m chuẩn MFi",
+    "price": "220.000₫",
+    "img": "/image/product6.png",
+    "desc": "Chuẩn MFi, tương thích iPhone/iPad, sạc ổn định, an toàn.",
+    "type": "Cable",
+    "New": "false",
+    "slug": "cap-lightning-1m-mfi",
+    "fullSpecs": {
+      "Cáp": {
+        "Chuẩn": "USB-A to Lightning",
+        "Chứng nhận": "MFi",
+        "Chiều dài": "1m"
+      }
+    }
+  },
+  {
+    "name": "Tai nghe Bluetooth True Wireless chống ồn",
+    "price": "990.000₫",
+    "img": "/image/product2.png",
+    "desc": "Chống ồn chủ động, độ trễ thấp, pin dùng tới 24 giờ (kèm hộp).",
+    "type": "Earphone",
+    "New": "true",
+    "slug": "tai-nghe-true-wireless-chong-on",
+    "fullSpecs": {
+      "Âm thanh": {
+        "Chống ồn": "ANC",
+        "Kết nối": "Bluetooth 5.3",
+        "Thời lượng pin": "24 giờ (kèm hộp sạc)"
+      }
+    }
+  },
+  {
+    "name": "Tai nghe có dây Type-C",
+    "price": "190.000₫",
+    "img": "/image/product1.png",
+    "desc": "Cắm là dùng, micro đàm thoại, tương thích đa số Android Type-C.",
+    "type": "Earphone",
+    "New": "false",
+    "slug": "tai-nghe-co-day-type-c",
+    "fullSpecs": {
+      "Âm thanh": {
+        "Cổng kết nối": "USB-C",
+        "Micro": "Có",
+        "Điều khiển": "Nút bấm trên dây"
+      }
+    }
+  },
+  {
+    "name": "Pin dự phòng 10.000mAh 20W (PD/QC)",
+    "price": "450.000₫",
+    "img": "/image/product3.png",
+    "desc": "Nhỏ gọn, sạc nhanh 20W, hỗ trợ sạc 2 thiết bị cùng lúc.",
+    "type": "PowerBank",
+    "New": "true",
+    "slug": "pin-du-phong-10000mah-20w",
+    "fullSpecs": {
+      "Pin": {
+        "Dung lượng": "10.000mAh",
+        "Công suất": "20W",
+        "Chuẩn": "PD, QC"
+      }
+    }
+  },
+  {
+    "name": "Pin dự phòng 20.000mAh 22.5W (3 cổng)",
+    "price": "690.000₫",
+    "img": "/image/product4.png",
+    "desc": "Dung lượng lớn, sạc nhanh 22.5W, có màn hình hiển thị % pin.",
+    "type": "PowerBank",
+    "New": "false",
+    "slug": "pin-du-phong-20000mah-22-5w",
+    "fullSpecs": {
+      "Pin": {
+        "Dung lượng": "20.000mAh",
+        "Công suất": "22.5W",
+        "Cổng ra": "2x USB-A, 1x USB-C"
+      }
+    }
+  },
+  {
+    "name": "Giá đỡ điện thoại để bàn xoay 360°",
+    "price": "120.000₫",
+    "img": "/image/product5.png",
+    "desc": "Gập gọn, xoay 360°, phù hợp học online, xem phim, livestream.",
+    "type": "Stand",
+    "New": "true",
+    "slug": "gia-do-dien-thoai-de-ban-360",
+    "fullSpecs": {
+      "Thông tin chung": {
+        "Chất liệu": "Hợp kim + nhựa",
+        "Góc xoay": "360°",
+        "Tương thích": "Điện thoại 4-7 inch"
+      }
+    }
+  },
+  {
+    "name": "Miếng dán cường lực 2.5D (trong suốt)",
+    "price": "90.000₫",
+    "img": "/image/product6.png",
+    "desc": "Độ cứng 9H, chống trầy xước, hạn chế bám vân tay.",
+    "type": "ScreenProtector",
+    "New": "false",
+    "slug": "mieng-dan-cuong-luc-2-5d-trong-suot",
+    "fullSpecs": {
+      "Màn hình": {
+        "Độ cứng": "9H",
+        "Loại": "2.5D",
+        "Bề mặt": "Trong suốt"
+      }
+    }
+  }
+]

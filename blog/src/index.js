@@ -58,6 +58,7 @@ app.engine(
     extname: '.hbs',
     helpers: {
       sum: (a, b) => a + b,
+      eq: (a, b) => String(a) === String(b),
       va: process.env.PORT,
       json: (context) => {
         return JSON.stringify(context)

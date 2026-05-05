@@ -9,8 +9,14 @@ class CartController {
   // [GET] /cart
   index(req, res, next) {
     try {
-      const jsonPath = path.join(__dirname, '../../util/phone_data.json');
-      const products = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      const phonePath = path.join(__dirname, '../../util/phone_data.json');
+      const accessoryPath = path.join(__dirname, '../../util/accesories-data.json');
+
+      const phones = JSON.parse(fs.readFileSync(phonePath, 'utf8'));
+      const accessoriesRaw = fs.readFileSync(accessoryPath, 'utf8');
+      const accessories = accessoriesRaw.trim() ? JSON.parse(accessoriesRaw) : [];
+
+      const products = [...phones, ...accessories];
 
       // Đọc cookie cart
       let cart = [];
