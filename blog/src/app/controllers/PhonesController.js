@@ -25,7 +25,7 @@ class PhonesController {
       const products = JSON.parse(fileData);
 
       // Đảm bảo chỉ truyền 5 option tĩnh sang view
-      let AllTypes = ['Apple', 'Samsung', 'Xiaomi', 'Oppo ', 'Others'];
+      let AllTypes = ['Apple', 'Samsung', 'Xiaomi', 'Oppo', 'Others'];
       
       let filter_product = products;
 
